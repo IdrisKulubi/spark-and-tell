@@ -1,3 +1,8 @@
+<img width="500" height="850" alt="image" src="https://github.com/user-attachments/assets/090540b2-1e3f-46d6-b003-475ef26be180" />
+<img width="606" height="825" alt="image" src="https://github.com/user-attachments/assets/94122852-2c48-4fd9-b94a-a4e82659ebaf" />
+
+
+
 # 🎲💕 Spark & Tell
 
 > Turn awkward dates into unforgettable connections through meaningful conversations
