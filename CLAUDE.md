@@ -1,5 +1,7 @@
 # CLAUDE.md
 
+after every major change, run `bun check` and `bun typecheck` to ensure everything is working.
+
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Project Overview
