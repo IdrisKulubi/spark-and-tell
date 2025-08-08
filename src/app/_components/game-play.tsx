@@ -8,6 +8,7 @@ import { PowerUps } from "./power-ups";
 import { QuestionCard } from "./question-card";
 import { SparkAwarder } from "./spark-awarder";
 import { SparkDisplay } from "./spark-display";
+import { BuyMeCoffee } from "./buy-me-coffee";
 
 export function GamePlay() {
 	const {
@@ -138,6 +139,11 @@ export function GamePlay() {
 					{/* Power-ups for before rolling dice */}
 					{gamePhase === "playing" && !currentQuestion && <PowerUps />}
 				</div>
+			</div>
+			
+			{/* Floating Buy Me a Coffee Button */}
+			<div className="fixed bottom-4 right-4 z-50">
+				<BuyMeCoffee size="small" />
 			</div>
 		</div>
 	);

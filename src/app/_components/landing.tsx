@@ -4,6 +4,7 @@ import { useGameStore } from "@/store/gameStore";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { TutorialModal } from "./tutorial-modal";
+import { BuyMeCoffee } from "./buy-me-coffee";
 
 export function Landing() {
 	const setGamePhase = useGameStore((state) => state.setGamePhase);
@@ -101,16 +102,7 @@ export function Landing() {
 				<p className="mb-4">No sign-up required • Just pure fun</p>
 				
 				{/* Buy Me a Coffee Button */}
-				<motion.a
-					href="https://buymeacoffee.com/elliottchong"
-					target="_blank"
-					rel="noopener noreferrer"
-					whileHover={{ scale: 1.05 }}
-					whileTap={{ scale: 0.95 }}
-					className="inline-flex items-center gap-2 rounded-full bg-yellow-400 px-6 py-3 font-semibold text-gray-900 shadow-lg transition-all hover:bg-yellow-300 hover:shadow-xl"
-				>
-					Buy me a coffee <span className="text-2xl">☕</span>
-				</motion.a>
+				<BuyMeCoffee size="medium" />
 			</motion.div>
 		</div>
 	);
