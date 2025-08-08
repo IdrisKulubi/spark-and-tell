@@ -2845,5 +2845,365 @@
     "tags": ["vulnerable", "support"],
     "type": "both-answer",
     "points": 3
+  },
+  {
+    "id": "spicy-41",
+    "category": 5,
+    "difficulty": 2,
+    "text": "What's the most romantic gesture you've ever wanted to receive?",
+    "tags": ["romantic", "desires"],
+    "type": "standard",
+    "points": 2
+  },
+  {
+    "id": "spicy-42",
+    "category": 5,
+    "difficulty": 3,
+    "text": "Describe your ideal way to be woken up in the morning",
+    "tags": ["intimate", "morning"],
+    "type": "standard",
+    "points": 3
+  },
+  {
+    "id": "spicy-43",
+    "category": 5,
+    "difficulty": 1,
+    "text": "What's your favorite type of kiss?",
+    "tags": ["romantic", "preferences"],
+    "type": "standard",
+    "points": 1
+  },
+  {
+    "id": "spicy-44",
+    "category": 5,
+    "difficulty": 2,
+    "text": "What's the most attractive thing someone can wear?",
+    "tags": ["physical", "preferences"],
+    "type": "standard",
+    "points": 2
+  },
+  {
+    "id": "spicy-45",
+    "category": 5,
+    "difficulty": 3,
+    "text": "What's your most secret romantic fantasy?",
+    "tags": ["intimate", "vulnerable"],
+    "type": "standard",
+    "points": 3
+  },
+  {
+    "id": "spicy-46",
+    "category": 5,
+    "difficulty": 1,
+    "text": "How do you like to cuddle?",
+    "tags": ["intimate", "comfort"],
+    "type": "standard",
+    "points": 1
+  },
+  {
+    "id": "spicy-47",
+    "category": 5,
+    "difficulty": 2,
+    "text": "What's your idea of the perfect date night ending?",
+    "tags": ["romantic", "intimate"],
+    "type": "standard",
+    "points": 2
+  },
+  {
+    "id": "spicy-48",
+    "category": 5,
+    "difficulty": 3,
+    "text": "What's something you've always wanted a partner to do for you?",
+    "tags": ["desires", "vulnerable"],
+    "type": "standard",
+    "points": 3
+  },
+  {
+    "id": "spicy-49",
+    "category": 5,
+    "difficulty": 1,
+    "text": "What scent drives you wild?",
+    "tags": ["sensory", "attraction"],
+    "type": "standard",
+    "points": 1
+  },
+  {
+    "id": "spicy-50",
+    "category": 5,
+    "difficulty": 2,
+    "text": "Describe your perfect lazy Sunday in bed",
+    "tags": ["intimate", "relaxing"],
+    "type": "standard",
+    "points": 2
+  },
+  {
+    "id": "spicy-51",
+    "category": 5,
+    "difficulty": 3,
+    "text": "What's the boldest thing you've done for love?",
+    "tags": ["brave", "romantic"],
+    "type": "standard",
+    "points": 3
+  },
+  {
+    "id": "spicy-52",
+    "category": 5,
+    "difficulty": 1,
+    "text": "What's your favorite way to flirt?",
+    "tags": ["flirty", "personality"],
+    "type": "standard",
+    "points": 1
+  },
+  {
+    "id": "spicy-53",
+    "category": 5,
+    "difficulty": 2,
+    "text": "What makes you feel most attractive?",
+    "tags": ["confidence", "personal"],
+    "type": "standard",
+    "points": 2
+  },
+  {
+    "id": "spicy-54",
+    "category": 5,
+    "difficulty": 3,
+    "text": "What's your biggest romantic regret?",
+    "tags": ["vulnerable", "past"],
+    "type": "standard",
+    "points": 3
+  },
+  {
+    "id": "spicy-55",
+    "category": 5,
+    "difficulty": 1,
+    "text": "What's your favorite romantic movie moment you wish would happen to you?",
+    "tags": ["media", "dreams"],
+    "type": "standard",
+    "points": 1
+  },
+  {
+    "id": "spicy-56",
+    "category": 5,
+    "difficulty": 2,
+    "text": "How do you show someone you're interested in them?",
+    "tags": ["flirty", "communication"],
+    "type": "standard",
+    "points": 2
+  },
+  {
+    "id": "spicy-57",
+    "category": 5,
+    "difficulty": 3,
+    "text": "What's the most intimate non-physical connection you've had?",
+    "tags": ["emotional", "deep"],
+    "type": "standard",
+    "points": 3
+  },
+  {
+    "id": "spicy-58",
+    "category": 5,
+    "difficulty": 1,
+    "text": "What's your favorite pet name to be called?",
+    "tags": ["romantic", "preferences"],
+    "type": "standard",
+    "points": 1
+  },
+  {
+    "id": "spicy-59",
+    "category": 5,
+    "difficulty": 2,
+    "text": "What's the sexiest compliment you've ever received?",
+    "tags": ["confidence", "memorable"],
+    "type": "standard",
+    "points": 2
+  },
+  {
+    "id": "spicy-60",
+    "category": 5,
+    "difficulty": 3,
+    "text": "Describe your perfect honeymoon",
+    "tags": ["romantic", "future"],
+    "type": "standard",
+    "points": 3
+  },
+  {
+    "id": "spicy-61",
+    "category": 5,
+    "difficulty": 1,
+    "text": "What's your favorite thing about physical touch?",
+    "tags": ["intimate", "sensory"],
+    "type": "standard",
+    "points": 1
+  },
+  {
+    "id": "spicy-62",
+    "category": 5,
+    "difficulty": 2,
+    "text": "What's the most romantic thing you've ever done for someone?",
+    "tags": ["romantic", "giving"],
+    "type": "standard",
+    "points": 2
+  },
+  {
+    "id": "spicy-63",
+    "category": 5,
+    "difficulty": 3,
+    "text": "What's your deepest unfulfilled desire?",
+    "tags": ["vulnerable", "desires"],
+    "type": "standard",
+    "points": 3
+  },
+  {
+    "id": "spicy-64",
+    "category": 5,
+    "difficulty": 1,
+    "text": "What makes you weak in the knees?",
+    "tags": ["attraction", "physical"],
+    "type": "standard",
+    "points": 1
+  },
+  {
+    "id": "spicy-65",
+    "category": 5,
+    "difficulty": 2,
+    "text": "How do you like to be surprised romantically?",
+    "tags": ["romantic", "preferences"],
+    "type": "standard",
+    "points": 2
+  },
+  {
+    "id": "spicy-66",
+    "category": 5,
+    "difficulty": 3,
+    "text": "What's the most vulnerable you've been with a partner?",
+    "tags": ["intimate", "trust"],
+    "type": "standard",
+    "points": 3
+  },
+  {
+    "id": "spicy-67",
+    "category": 5,
+    "difficulty": 1,
+    "text": "What's your favorite way to spend time alone with your partner?",
+    "tags": ["romantic", "quality time"],
+    "type": "standard",
+    "points": 1
+  },
+  {
+    "id": "spicy-68",
+    "category": 5,
+    "difficulty": 2,
+    "text": "What physical feature do you find most attractive in a partner?",
+    "tags": ["physical", "preferences"],
+    "type": "standard",
+    "points": 2
+  },
+  {
+    "id": "spicy-69",
+    "category": 5,
+    "difficulty": 3,
+    "text": "What's your most intense romantic memory?",
+    "tags": ["emotional", "memorable"],
+    "type": "standard",
+    "points": 3
+  },
+  {
+    "id": "spicy-70",
+    "category": 5,
+    "difficulty": 1,
+    "text": "How do you like to celebrate anniversaries?",
+    "tags": ["romantic", "celebration"],
+    "type": "standard",
+    "points": 1
+  },
+  {
+    "id": "spicy-71",
+    "category": 5,
+    "difficulty": 2,
+    "text": "What's your idea of perfect physical chemistry?",
+    "tags": ["attraction", "connection"],
+    "type": "standard",
+    "points": 2
+  },
+  {
+    "id": "spicy-72",
+    "category": 5,
+    "difficulty": 3,
+    "text": "What boundary have you always wanted to cross?",
+    "tags": ["adventurous", "desires"],
+    "type": "standard",
+    "points": 3
+  },
+  {
+    "id": "spicy-73",
+    "category": 5,
+    "difficulty": 1,
+    "text": "What's your favorite romantic song and why?",
+    "tags": ["music", "romantic"],
+    "type": "standard",
+    "points": 1
+  },
+  {
+    "id": "spicy-74",
+    "category": 5,
+    "difficulty": 2,
+    "text": "How important is passion in a relationship to you?",
+    "tags": ["values", "romantic"],
+    "type": "standard",
+    "points": 2
+  },
+  {
+    "id": "spicy-75",
+    "category": 5,
+    "difficulty": 3,
+    "text": "What's the most spontaneous romantic thing you've done?",
+    "tags": ["adventurous", "romantic"],
+    "type": "standard",
+    "points": 3
+  },
+  {
+    "id": "spicy-76",
+    "category": 5,
+    "difficulty": 1,
+    "text": "What time of day do you feel most romantic?",
+    "tags": ["preferences", "mood"],
+    "type": "standard",
+    "points": 1
+  },
+  {
+    "id": "spicy-77",
+    "category": 5,
+    "difficulty": 2,
+    "text": "What's your biggest relationship fantasy?",
+    "tags": ["dreams", "romantic"],
+    "type": "standard",
+    "points": 2
+  },
+  {
+    "id": "spicy-78",
+    "category": 5,
+    "difficulty": 3,
+    "text": "What makes you feel most connected to your partner physically?",
+    "tags": ["intimate", "connection"],
+    "type": "standard",
+    "points": 3
+  },
+  {
+    "id": "spicy-79",
+    "category": 5,
+    "difficulty": 1,
+    "text": "What's your favorite way to tease your partner?",
+    "tags": ["flirty", "playful"],
+    "type": "standard",
+    "points": 1
+  },
+  {
+    "id": "spicy-80",
+    "category": 5,
+    "difficulty": 2,
+    "text": "Describe the most romantic scene you can imagine",
+    "tags": ["romantic", "imaginative"],
+    "type": "standard",
+    "points": 2
   }
 ]
