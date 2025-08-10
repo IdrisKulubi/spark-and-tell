@@ -10,6 +10,8 @@ interface MultiplayerSetupProps {
 }
 
 export function MultiplayerSetup({ onBack }: MultiplayerSetupProps) {
+	console.log("🎮 MultiplayerSetup component rendered");
+	
 	const [mode, setMode] = useState<"choose" | "create" | "join">("choose");
 	const [playerName, setPlayerName] = useState("");
 	const [roomCode, setRoomCode] = useState("");

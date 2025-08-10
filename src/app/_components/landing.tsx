@@ -8,7 +8,10 @@ import { TutorialModal } from "./tutorial-modal";
 
 export function Landing() {
 	const setGamePhase = useGameStore((state) => state.setGamePhase);
+	const currentGamePhase = useGameStore((state) => state.gamePhase);
 	const [showTutorial, setShowTutorial] = useState(false);
+	
+	console.log("🏠 Landing component - current gamePhase:", currentGamePhase);
 
 	return (
 		<div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-pink-500 via-purple-600 to-indigo-700 p-4">
@@ -59,7 +62,17 @@ export function Landing() {
 						<motion.button
 							whileHover={{ scale: 1.05 }}
 							whileTap={{ scale: 0.95 }}
-							onClick={() => setGamePhase("multiplayer-setup")}
+							onClick={() => {
+								console.log("🌐 Play Online clicked - BEFORE setGamePhase");
+								console.log("🔍 Current gamePhase before:", currentGamePhase);
+								setGamePhase("multiplayer-setup");
+								console.log("✅ setGamePhase called with 'multiplayer-setup'");
+								
+								// Check if state updated immediately (it might not due to async nature)
+								setTimeout(() => {
+									console.log("🔍 GamePhase after 100ms:", useGameStore.getState().gamePhase);
+								}, 100);
+							}}
 							className="rounded-full bg-gradient-to-r from-blue-500 to-purple-600 px-8 py-4 font-bold text-lg text-white shadow-2xl transition-shadow hover:shadow-blue/20 sm:px-10 sm:py-5 sm:text-xl md:px-12 md:py-6 md:text-2xl"
 						>
 							Play Online 🌐
@@ -112,7 +125,7 @@ export function Landing() {
 				<p className="mb-3 sm:mb-4">No sign-up required • Just pure fun</p>
 
 				{/* Buy Me a Coffee Button */}
-				<BuyMeCoffee size="medium" />
+				{/* <BuyMeCoffee size="medium" /> */}
 			</motion.div>
 		</div>
 	);

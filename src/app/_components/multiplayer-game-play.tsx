@@ -104,6 +104,7 @@ export function MultiplayerGamePlay() {
 	};
 
 	const handleAnswerComplete = () => {
+		console.log("✅ Answer completed, moving to awarding phase");
 		// Move to awarding phase locally (temporary fix)
 		handleGameEvent({
 			type: "ANSWER_COMPLETED",
@@ -114,7 +115,9 @@ export function MultiplayerGamePlay() {
 	// Use actual player names from the players object, not settings
 	const currentPlayerName = currentTurn === 1 ? players.host.name : (players.guest?.name || "Player 2");
 	const otherPlayerName = currentTurn === 1 ? (players.guest?.name || "Player 2") : players.host.name;
-	const isAwarding = !isMyTurn && gamePhase === "awarding-sparks";
+	
+	// Fix awarding logic: In awarding phase, the OTHER player (not current turn) should award
+	const isAwarding = gamePhase === "awarding-sparks" && !isMyTurn;
 
 	// Temporary debug logs to verify turn logic
 	console.log("🎯 Turn Debug:", {
@@ -126,7 +129,9 @@ export function MultiplayerGamePlay() {
 		guestId: players.guest?.id,
 		guestName: players.guest?.name,
 		currentPlayerName,
-		otherPlayerName
+		otherPlayerName,
+		gamePhase,
+		isAwarding
 	});
 
 	return (
@@ -254,9 +259,9 @@ export function MultiplayerGamePlay() {
 			</div>
 
 			{/* Floating Buy Me a Coffee Button */}
-			<div className="fixed right-3 bottom-3 z-50 sm:right-4 sm:bottom-4">
+			{/* <div className="fixed right-3 bottom-3 z-50 sm:right-4 sm:bottom-4">
 				<BuyMeCoffee size="small" />
-			</div>
+			</div> */}
 		</div>
 	);
 }

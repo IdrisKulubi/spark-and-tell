@@ -9,7 +9,7 @@ import { GameSetup } from "./game-setup";
 import { Landing } from "./landing";
 import { MultiplayerGamePlay } from "./multiplayer-game-play";
 import { MultiplayerLobby } from "./multiplayer-lobby";
-import { MultiplayerSetup } from "./multiplayer-setup";
+import { MultiplayerManager } from "./multiplayer-manager";
 
 export function GameContainer() {
 	const gamePhase = useGameStore((state) => state.gamePhase);
@@ -25,6 +25,13 @@ export function GameContainer() {
 		const savedPlayerId = localStorage.getItem("spark-tell-player-id");
 		const savedRoomId = localStorage.getItem("spark-tell-room-id");
 		
+		console.log("🔍 Checking for saved session:", {
+			savedPlayerId: savedPlayerId ? "EXISTS" : "NONE",
+			savedRoomId: savedRoomId ? "EXISTS" : "NONE",
+			connectionStatus,
+			multiplayerPhase
+		});
+		
 		if (savedPlayerId && savedRoomId && connectionStatus === "disconnected") {
 			console.log("🔄 Auto-reconnecting to saved session:", {
 				playerId: savedPlayerId,
@@ -34,19 +41,31 @@ export function GameContainer() {
 			setConnectionStatus("connecting");
 			setMultiplayerPhase("setup");
 		}
-	}, [connectionStatus, setConnectionStatus, setMultiplayerPhase]);
+	}, [connectionStatus, setConnectionStatus, setMultiplayerPhase, multiplayerPhase]);
+
+	// Check if we're in multiplayer mode
+	const isMultiplayer =
+		connectionStatus === "connected" || connectionStatus === "connecting";
 
 	// Debug logging
 	console.log("🎮 GameContainer state:", {
 		gamePhase,
 		multiplayerPhase,
 		connectionStatus,
-		isMultiplayer: connectionStatus === "connected" || connectionStatus === "connecting"
+		isMultiplayer
 	});
 
-	// Check if we're in multiplayer mode
-	const isMultiplayer =
-		connectionStatus === "connected" || connectionStatus === "connecting";
+	// Debug which component will be rendered
+	if (isMultiplayer && connectionStatus === "connected") {
+		console.log("🎯 Rendering multiplayer component for phase:", multiplayerPhase);
+	} else {
+		console.log("🎯 Rendering single-player component for phase:", gamePhase);
+		if (gamePhase === "multiplayer-setup") {
+			console.log("✅ Should render MultiplayerSetup component");
+		} else if (gamePhase === "landing") {
+			console.log("✅ Should render Landing component");
+		}
+	}
 
 	// Handle multiplayer phases - only if we have valid connection
 	if (isMultiplayer && connectionStatus === "connected") {
@@ -69,7 +88,7 @@ export function GameContainer() {
 		case "landing":
 			return <Landing />;
 		case "multiplayer-setup":
-			return <MultiplayerSetup onBack={() => setGamePhase("landing")} />;
+			return <MultiplayerManager onBack={() => setGamePhase("landing")} />;
 		case "setup":
 			return <GameSetup />;
 		case "playing":

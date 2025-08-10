@@ -138,10 +138,10 @@ export function GamePlay() {
 				</div>
 			</div>
 
-			{/* Floating Buy Me a Coffee Button */}
+			{/* Floating Buy Me a Coffee Button
 			<div className="fixed right-3 bottom-3 z-50 sm:right-4 sm:bottom-4">
 				<BuyMeCoffee size="small" />
-			</div>
+			</div> */}
 		</div>
 	);
 }
