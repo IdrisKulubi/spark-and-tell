@@ -14,37 +14,44 @@ export function TutorialModal({ isOpen, onClose }: TutorialModalProps) {
 	const tutorialSteps = [
 		{
 			title: "Welcome to Spark & Tell! 🎉",
-			content: "A fun game for couples to connect deeper through meaningful questions.",
+			content:
+				"A fun game for couples to connect deeper through meaningful questions.",
 			emoji: "💕",
 		},
 		{
 			title: "How to Play",
-			content: "Take turns rolling the dice. Each number corresponds to a different question category.",
+			content:
+				"Take turns rolling the dice. Each number corresponds to a different question category.",
 			emoji: "🎲",
 		},
 		{
 			title: "Categories",
-			content: "1: Icebreakers 🧊\n2: Dreams ✨\n3: Would You Rather 🤔\n4: Story Time 📖\n5: Spicy 🔥\n6: Deep Dive 💭",
+			content:
+				"1: Icebreakers 🧊\n2: Dreams ✨\n3: Would You Rather 🤔\n4: Story Time 📖\n5: Spicy 🔥\n6: Deep Dive 💭",
 			emoji: "📝",
 		},
 		{
 			title: "Answering Questions",
-			content: "Answer honestly and from the heart. Each question has base points based on difficulty.",
+			content:
+				"Answer honestly and from the heart. Each question has base points based on difficulty.",
 			emoji: "💬",
 		},
 		{
 			title: "Award Sparks",
-			content: "After your partner answers, award them sparks based on how their answer made you feel!",
+			content:
+				"After your partner answers, award them sparks based on how their answer made you feel!",
 			emoji: "✨",
 		},
 		{
 			title: "Power-Ups",
-			content: "Use special abilities like Skip, Re-roll, or Both Answer to spice things up!",
+			content:
+				"Use special abilities like Skip, Re-roll, or Both Answer to spice things up!",
 			emoji: "⚡",
 		},
 		{
 			title: "Win Together",
-			content: "The goal isn't to beat each other - it's to connect and learn about each other!",
+			content:
+				"The goal isn't to beat each other - it's to connect and learn about each other!",
 			emoji: "🏆",
 		},
 	];
@@ -90,7 +97,7 @@ export function TutorialModal({ isOpen, onClose }: TutorialModalProps) {
 						<button
 							type="button"
 							onClick={handleSkip}
-							className="absolute right-4 top-4 rounded-full p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-600"
+							className="absolute top-4 right-4 rounded-full p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-600"
 						>
 							<svg
 								className="h-6 w-6"
@@ -116,8 +123,8 @@ export function TutorialModal({ isOpen, onClose }: TutorialModalProps) {
 										index === currentStep
 											? "w-8 bg-purple-600"
 											: index < currentStep
-											  ? "w-2 bg-purple-300"
-											  : "w-2 bg-gray-300"
+												? "w-2 bg-purple-300"
+												: "w-2 bg-gray-300"
 									}`}
 								/>
 							))}
@@ -173,7 +180,9 @@ export function TutorialModal({ isOpen, onClose }: TutorialModalProps) {
 								onClick={handleNext}
 								className="rounded-full bg-purple-600 px-6 py-2 font-semibold text-white hover:bg-purple-700"
 							>
-								{currentStep === tutorialSteps.length - 1 ? "Let's Play!" : "Next"}
+								{currentStep === tutorialSteps.length - 1
+									? "Let's Play!"
+									: "Next"}
 							</button>
 						</div>
 					</motion.div>

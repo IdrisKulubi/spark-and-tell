@@ -7,7 +7,8 @@ import { TRPCReactProvider } from "@/trpc/react";
 
 export const metadata: Metadata = {
 	title: "Spark & Tell",
-	description: "Turn awkward dates into unforgettable connections through meaningful conversations",
+	description:
+		"Turn awkward dates into unforgettable connections through meaningful conversations",
 	icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 

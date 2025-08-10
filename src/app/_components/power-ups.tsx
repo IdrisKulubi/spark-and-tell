@@ -92,7 +92,7 @@ export function PowerUps() {
 
 						{/* Tooltip */}
 						{!isDisabled && (
-							<div className="pointer-events-none absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-lg bg-black/80 px-3 py-1 text-xs text-white opacity-0 transition-opacity group-hover:opacity-100">
+							<div className="-top-10 -translate-x-1/2 pointer-events-none absolute left-1/2 whitespace-nowrap rounded-lg bg-black/80 px-3 py-1 text-white text-xs opacity-0 transition-opacity group-hover:opacity-100">
 								{powerUp.description}
 							</div>
 						)}

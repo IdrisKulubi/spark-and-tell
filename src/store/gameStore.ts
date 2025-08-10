@@ -121,7 +121,7 @@ export const useGameStore = create<GameStore>((set, get) => ({
 		const state = get();
 		// Set the current and last category immediately
 		set({ currentCategory: category, lastCategory: category });
-		
+
 		const availableQuestions = filterQuestions(
 			category,
 			state.settings,
@@ -155,7 +155,7 @@ export const useGameStore = create<GameStore>((set, get) => ({
 	awardBasePoints: () => {
 		const state = get();
 		if (!state.currentQuestion) return;
-		
+
 		const basePoints = state.currentQuestion.points;
 		if (state.currentTurn === 1) {
 			set({ player1Sparks: state.player1Sparks + basePoints });

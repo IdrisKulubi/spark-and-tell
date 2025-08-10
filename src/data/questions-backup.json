@@ -1,1445 +1,1085 @@
 [
-  {
-    "id": "ice-1",
-    "category": 1,
-    "difficulty": 1,
-    "text": "What's the weirdest food combination you enjoy?",
-    "tags": [
-      "funny",
-      "light"
-    ],
-    "type": "standard",
-    "points": 1
-  },
-  {
-    "id": "ice-2",
-    "category": 1,
-    "difficulty": 1,
-    "text": "What's your go-to karaoke song?",
-    "tags": [
-      "fun",
-      "music"
-    ],
-    "type": "standard",
-    "points": 1
-  },
-  {
-    "id": "ice-3",
-    "category": 1,
-    "difficulty": 1,
-    "text": "If you could have dinner with anyone dead or alive, who would it be?",
-    "tags": [
-      "thoughtful",
-      "light"
-    ],
-    "type": "standard",
-    "points": 1
-  },
-  {
-    "id": "ice-4",
-    "category": 1,
-    "difficulty": 1,
-    "text": "What's your most unpopular opinion about food?",
-    "tags": [
-      "funny",
-      "controversial"
-    ],
-    "type": "standard",
-    "points": 1
-  },
-  {
-    "id": "ice-5",
-    "category": 1,
-    "difficulty": 1,
-    "text": "What's the last thing you Googled?",
-    "tags": [
-      "funny",
-      "revealing"
-    ],
-    "type": "standard",
-    "points": 1
-  },
-  {
-    "id": "ice-6",
-    "category": 1,
-    "difficulty": 2,
-    "text": "What's a skill you're secretly proud of?",
-    "tags": [
-      "personal",
-      "light"
-    ],
-    "type": "standard",
-    "points": 2
-  },
-  {
-    "id": "ice-7",
-    "category": 1,
-    "difficulty": 2,
-    "text": "What's the most spontaneous thing you've ever done?",
-    "tags": [
-      "adventurous",
-      "story"
-    ],
-    "type": "standard",
-    "points": 2
-  },
-  {
-    "id": "ice-8",
-    "category": 1,
-    "difficulty": 2,
-    "text": "If you had to delete all but 3 apps from your phone, which ones would you keep?",
-    "tags": [
-      "modern",
-      "revealing"
-    ],
-    "type": "standard",
-    "points": 2
-  },
-  {
-    "id": "ice-9",
-    "category": 1,
-    "difficulty": 2,
-    "text": "What's your biggest pet peeve?",
-    "tags": [
-      "personal",
-      "funny"
-    ],
-    "type": "standard",
-    "points": 2
-  },
-  {
-    "id": "ice-10",
-    "category": 1,
-    "difficulty": 2,
-    "text": "What conspiracy theory do you secretly think might be true?",
-    "tags": [
-      "funny",
-      "controversial"
-    ],
-    "type": "standard",
-    "points": 2
-  },
-  {
-    "id": "ice-11",
-    "category": 1,
-    "difficulty": 1,
-    "text": "What's your spirit animal and why?",
-    "tags": [
-      "fun",
-      "personality"
-    ],
-    "type": "standard",
-    "points": 1
-  },
-  {
-    "id": "ice-12",
-    "category": 1,
-    "difficulty": 1,
-    "text": "If you could live in any TV show universe, which would it be?",
-    "tags": [
-      "fun",
-      "media"
-    ],
-    "type": "standard",
-    "points": 1
-  },
-  {
-    "id": "ice-13",
-    "category": 1,
-    "difficulty": 2,
-    "text": "What's the most embarrassing thing you've done for love?",
-    "tags": [
-      "romantic",
-      "funny"
-    ],
-    "type": "standard",
-    "points": 2
-  },
-  {
-    "id": "ice-14",
-    "category": 1,
-    "difficulty": 3,
-    "text": "What's something you've never told anyone?",
-    "tags": [
-      "vulnerable",
-      "deep"
-    ],
-    "type": "standard",
-    "points": 3
-  },
-  {
-    "id": "ice-15",
-    "category": 1,
-    "difficulty": 1,
-    "text": "Both describe your perfect pizza - then see if they match!",
-    "tags": [
-      "fun",
-      "food"
-    ],
-    "type": "both-answer",
-    "points": 1
-  },
-  {
-    "id": "ice-16",
-    "category": 1,
-    "difficulty": 2,
-    "text": "What's your most irrational fear?",
-    "tags": [
-      "personal",
-      "vulnerable"
-    ],
-    "type": "standard",
-    "points": 2
-  },
-  {
-    "id": "ice-17",
-    "category": 1,
-    "difficulty": 1,
-    "text": "Show me your most used emoji and explain why",
-    "tags": [
-      "modern",
-      "fun"
-    ],
-    "type": "challenge",
-    "points": 1
-  },
-  {
-    "id": "ice-18",
-    "category": 1,
-    "difficulty": 2,
-    "text": "What's a trend you're too old to understand?",
-    "tags": [
-      "funny",
-      "modern"
-    ],
-    "type": "standard",
-    "points": 2
-  },
-  {
-    "id": "ice-19",
-    "category": 1,
-    "difficulty": 3,
-    "text": "What's your biggest regret from your teenage years?",
-    "tags": [
-      "vulnerable",
-      "past"
-    ],
-    "type": "standard",
-    "points": 3
-  },
-  {
-    "id": "ice-20",
-    "category": 1,
-    "difficulty": 1,
-    "text": "If you were a flavor of ice cream, what would you be?",
-    "tags": [
-      "fun",
-      "personality"
-    ],
-    "type": "standard",
-    "points": 1
-  },
-  {
-    "id": "dreams-1",
-    "category": 2,
-    "difficulty": 1,
-    "text": "Describe your perfect day from sunrise to sunset",
-    "tags": [
-      "thoughtful",
-      "revealing"
-    ],
-    "type": "standard",
-    "points": 1
-  },
-  {
-    "id": "dreams-2",
-    "category": 2,
-    "difficulty": 1,
-    "text": "If money wasn't a factor, what would you do tomorrow?",
-    "tags": [
-      "dreams",
-      "revealing"
-    ],
-    "type": "standard",
-    "points": 1
-  },
-  {
-    "id": "dreams-3",
-    "category": 2,
-    "difficulty": 2,
-    "text": "What skill do you wish you had mastered?",
-    "tags": [
-      "personal",
-      "aspirational"
-    ],
-    "type": "standard",
-    "points": 2
-  },
-  {
-    "id": "dreams-4",
-    "category": 2,
-    "difficulty": 1,
-    "text": "Where do you see yourself in 5 years?",
-    "followUp": "What about 10 years?",
-    "tags": [
-      "future",
-      "serious"
-    ],
-    "type": "standard",
-    "points": 1
-  },
-  {
-    "id": "dreams-5",
-    "category": 2,
-    "difficulty": 2,
-    "text": "What's on your bucket list that you're scared to try?",
-    "tags": [
-      "vulnerable",
-      "adventurous"
-    ],
-    "type": "standard",
-    "points": 2
-  },
-  {
-    "id": "dreams-6",
-    "category": 2,
-    "difficulty": 1,
-    "text": "If you could master any instrument overnight, which one?",
-    "tags": [
-      "music",
-      "dreams"
-    ],
-    "type": "standard",
-    "points": 1
-  },
-  {
-    "id": "dreams-7",
-    "category": 2,
-    "difficulty": 2,
-    "text": "What's a dream you've given up on? Would you reconsider?",
-    "tags": [
-      "vulnerable",
-      "deep"
-    ],
-    "type": "standard",
-    "points": 2
-  },
-  {
-    "id": "dreams-8",
-    "category": 2,
-    "difficulty": 3,
-    "text": "What legacy do you want to leave behind?",
-    "tags": [
-      "deep",
-      "philosophical"
-    ],
-    "type": "standard",
-    "points": 3
-  },
-  {
-    "id": "dreams-9",
-    "category": 2,
-    "difficulty": 1,
-    "text": "Both describe your dream vacation - see if you'd travel together!",
-    "tags": [
-      "travel",
-      "fun"
-    ],
-    "type": "both-answer",
-    "points": 1
-  },
-  {
-    "id": "dreams-10",
-    "category": 2,
-    "difficulty": 2,
-    "text": "What's the craziest adventure you want to go on?",
-    "tags": [
-      "adventurous",
-      "exciting"
-    ],
-    "type": "standard",
-    "points": 2
-  },
-  {
-    "id": "dreams-11",
-    "category": 2,
-    "difficulty": 1,
-    "text": "If you could live anywhere in the world, where and why?",
-    "tags": [
-      "travel",
-      "dreams"
-    ],
-    "type": "standard",
-    "points": 1
-  },
-  {
-    "id": "dreams-12",
-    "category": 2,
-    "difficulty": 2,
-    "text": "What career would you pursue if you could start over?",
-    "tags": [
-      "career",
-      "thoughtful"
-    ],
-    "type": "standard",
-    "points": 2
-  },
-  {
-    "id": "dreams-13",
-    "category": 2,
-    "difficulty": 3,
-    "text": "What scares you most about the future?",
-    "tags": [
-      "vulnerable",
-      "deep"
-    ],
-    "type": "standard",
-    "points": 3
-  },
-  {
-    "id": "dreams-14",
-    "category": 2,
-    "difficulty": 1,
-    "text": "What superpower would help you achieve your dreams?",
-    "tags": [
-      "fun",
-      "imaginative"
-    ],
-    "type": "standard",
-    "points": 1
-  },
-  {
-    "id": "dreams-15",
-    "category": 2,
-    "difficulty": 2,
-    "text": "What's a goal you're working on that nobody knows about?",
-    "tags": [
-      "personal",
-      "revealing"
-    ],
-    "type": "standard",
-    "points": 2
-  },
-  {
-    "id": "dreams-16",
-    "category": 2,
-    "difficulty": 1,
-    "text": "If you won the lottery today, what's the first thing you'd do?",
-    "tags": [
-      "fun",
-      "money"
-    ],
-    "type": "standard",
-    "points": 1
-  },
-  {
-    "id": "dreams-17",
-    "category": 2,
-    "difficulty": 3,
-    "text": "What dream have you been too afraid to pursue?",
-    "tags": [
-      "vulnerable",
-      "deep"
-    ],
-    "type": "standard",
-    "points": 3
-  },
-  {
-    "id": "dreams-18",
-    "category": 2,
-    "difficulty": 2,
-    "text": "Describe your ideal life at 80 years old",
-    "tags": [
-      "future",
-      "thoughtful"
-    ],
-    "type": "standard",
-    "points": 2
-  },
-  {
-    "id": "dreams-19",
-    "category": 2,
-    "difficulty": 1,
-    "text": "What hobby have you always wanted to pick up?",
-    "tags": [
-      "personal",
-      "aspirational"
-    ],
-    "type": "standard",
-    "points": 1
-  },
-  {
-    "id": "dreams-20",
-    "category": 2,
-    "difficulty": 2,
-    "text": "If you could change one thing about the world, what would it be?",
-    "tags": [
-      "thoughtful",
-      "idealistic"
-    ],
-    "type": "standard",
-    "points": 2
-  },
-  {
-    "id": "wyr-1",
-    "category": 3,
-    "difficulty": 1,
-    "text": "Would you rather be able to fly or be invisible?",
-    "tags": [
-      "classic",
-      "fun"
-    ],
-    "type": "standard",
-    "points": 1
-  },
-  {
-    "id": "wyr-2",
-    "category": 3,
-    "difficulty": 1,
-    "text": "Would you rather live in the mountains or by the beach?",
-    "tags": [
-      "lifestyle",
-      "preference"
-    ],
-    "type": "standard",
-    "points": 1
-  },
-  {
-    "id": "wyr-3",
-    "category": 3,
-    "difficulty": 1,
-    "text": "Would you rather have more time or more money?",
-    "tags": [
-      "philosophical",
-      "values"
-    ],
-    "type": "standard",
-    "points": 1
-  },
-  {
-    "id": "wyr-4",
-    "category": 3,
-    "difficulty": 2,
-    "text": "Would you rather know when you'll die or how you'll die?",
-    "tags": [
-      "dark",
-      "philosophical"
-    ],
-    "type": "standard",
-    "points": 2
-  },
-  {
-    "id": "wyr-5",
-    "category": 3,
-    "difficulty": 1,
-    "text": "Would you rather never use social media again or never watch TV/movies again?",
-    "tags": [
-      "modern",
-      "lifestyle"
-    ],
-    "type": "standard",
-    "points": 1
-  },
-  {
-    "id": "wyr-6",
-    "category": 3,
-    "difficulty": 2,
-    "text": "Would you rather be famous but lonely or unknown but loved?",
-    "tags": [
-      "deep",
-      "values"
-    ],
-    "type": "standard",
-    "points": 2
-  },
-  {
-    "id": "wyr-7",
-    "category": 3,
-    "difficulty": 1,
-    "text": "Would you rather always be 10 minutes late or 20 minutes early?",
-    "tags": [
-      "personality",
-      "funny"
-    ],
-    "type": "standard",
-    "points": 1
-  },
-  {
-    "id": "wyr-8",
-    "category": 3,
-    "difficulty": 2,
-    "text": "Would you rather lose all your memories or never be able to make new ones?",
-    "tags": [
-      "deep",
-      "philosophical"
-    ],
-    "type": "standard",
-    "points": 2
-  },
-  {
-    "id": "wyr-9",
-    "category": 3,
-    "difficulty": 1,
-    "text": "Both answer: Would you rather have a pause button or a rewind button for life?",
-    "tags": [
-      "philosophical",
-      "fun"
-    ],
-    "type": "both-answer",
-    "points": 1
-  },
-  {
-    "id": "wyr-10",
-    "category": 3,
-    "difficulty": 3,
-    "text": "Would you rather find true love or achieve your biggest dream?",
-    "tags": [
-      "romantic",
-      "deep"
-    ],
-    "type": "standard",
-    "points": 3
-  },
-  {
-    "id": "wyr-11",
-    "category": 3,
-    "difficulty": 1,
-    "text": "Would you rather be able to talk to animals or speak all human languages?",
-    "tags": [
-      "fun",
-      "imaginative"
-    ],
-    "type": "standard",
-    "points": 1
-  },
-  {
-    "id": "wyr-12",
-    "category": 3,
-    "difficulty": 2,
-    "text": "Would you rather give up your phone for a month or your best friend for a month?",
-    "tags": [
-      "modern",
-      "relationships"
-    ],
-    "type": "standard",
-    "points": 2
-  },
-  {
-    "id": "wyr-13",
-    "category": 3,
-    "difficulty": 1,
-    "text": "Would you rather always have to sing instead of speak or dance everywhere you go?",
-    "tags": [
-      "funny",
-      "silly"
-    ],
-    "type": "standard",
-    "points": 1
-  },
-  {
-    "id": "wyr-14",
-    "category": 3,
-    "difficulty": 2,
-    "text": "Would you rather be able to change the past or see the future?",
-    "tags": [
-      "philosophical",
-      "power"
-    ],
-    "type": "standard",
-    "points": 2
-  },
-  {
-    "id": "wyr-15",
-    "category": 3,
-    "difficulty": 1,
-    "text": "Would you rather never have to sleep or never have to eat?",
-    "tags": [
-      "practical",
-      "fun"
-    ],
-    "type": "standard",
-    "points": 1
-  },
-  {
-    "id": "wyr-16",
-    "category": 3,
-    "difficulty": 3,
-    "text": "Would you rather know all the world's secrets or have the power to change one thing?",
-    "tags": [
-      "philosophical",
-      "power"
-    ],
-    "type": "standard",
-    "points": 3
-  },
-  {
-    "id": "wyr-17",
-    "category": 3,
-    "difficulty": 1,
-    "text": "Would you rather be the funniest or the smartest person in the room?",
-    "tags": [
-      "personality",
-      "values"
-    ],
-    "type": "standard",
-    "points": 1
-  },
-  {
-    "id": "wyr-18",
-    "category": 3,
-    "difficulty": 2,
-    "text": "Would you rather never be able to lie or never be able to tell the truth?",
-    "tags": [
-      "ethical",
-      "challenging"
-    ],
-    "type": "standard",
-    "points": 2
-  },
-  {
-    "id": "wyr-19",
-    "category": 3,
-    "difficulty": 1,
-    "text": "Would you rather have a perfect memory or be able to forget anything you want?",
-    "tags": [
-      "memory",
-      "philosophical"
-    ],
-    "type": "standard",
-    "points": 1
-  },
-  {
-    "id": "wyr-20",
-    "category": 3,
-    "difficulty": 2,
-    "text": "Would you rather always know when someone is lying or always get away with lying?",
-    "tags": [
-      "ethical",
-      "power"
-    ],
-    "type": "standard",
-    "points": 2
-  },
-  {
-    "id": "story-1",
-    "category": 4,
-    "difficulty": 2,
-    "text": "Tell me about a time you were really proud of yourself",
-    "tags": [
-      "positive",
-      "personal"
-    ],
-    "type": "standard",
-    "points": 2
-  },
-  {
-    "id": "story-2",
-    "category": 4,
-    "difficulty": 2,
-    "text": "What's your most embarrassing story that you can laugh about now?",
-    "tags": [
-      "funny",
-      "vulnerable"
-    ],
-    "type": "standard",
-    "points": 2
-  },
-  {
-    "id": "story-3",
-    "category": 4,
-    "difficulty": 3,
-    "text": "Describe your first kiss",
-    "tags": [
-      "romantic",
-      "personal"
-    ],
-    "type": "standard",
-    "points": 3
-  },
-  {
-    "id": "story-4",
-    "category": 4,
-    "difficulty": 1,
-    "text": "What's the best compliment you've ever received?",
-    "tags": [
-      "positive",
-      "memorable"
-    ],
-    "type": "standard",
-    "points": 1
-  },
-  {
-    "id": "story-5",
-    "category": 4,
-    "difficulty": 2,
-    "text": "Tell me about your worst date ever",
-    "tags": [
-      "funny",
-      "dating"
-    ],
-    "type": "standard",
-    "points": 2
-  },
-  {
-    "id": "story-6",
-    "category": 4,
-    "difficulty": 1,
-    "text": "What's your favorite childhood memory?",
-    "tags": [
-      "nostalgic",
-      "sweet"
-    ],
-    "type": "standard",
-    "points": 1
-  },
-  {
-    "id": "story-7",
-    "category": 4,
-    "difficulty": 3,
-    "text": "Tell me about a time you completely changed your mind about something important",
-    "tags": [
-      "growth",
-      "deep"
-    ],
-    "type": "standard",
-    "points": 3
-  },
-  {
-    "id": "story-8",
-    "category": 4,
-    "difficulty": 2,
-    "text": "What's the most trouble you got into as a kid?",
-    "tags": [
-      "funny",
-      "childhood"
-    ],
-    "type": "standard",
-    "points": 2
-  },
-  {
-    "id": "story-9",
-    "category": 4,
-    "difficulty": 1,
-    "text": "Both share: Your most epic fail story",
-    "tags": [
-      "funny",
-      "vulnerable"
-    ],
-    "type": "both-answer",
-    "points": 1
-  },
-  {
-    "id": "story-10",
-    "category": 4,
-    "difficulty": 3,
-    "text": "Tell me about someone who changed your life",
-    "tags": [
-      "deep",
-      "personal"
-    ],
-    "type": "standard",
-    "points": 3
-  },
-  {
-    "id": "story-11",
-    "category": 4,
-    "difficulty": 1,
-    "text": "What's the luckiest thing that's ever happened to you?",
-    "tags": [
-      "positive",
-      "interesting"
-    ],
-    "type": "standard",
-    "points": 1
-  },
-  {
-    "id": "story-12",
-    "category": 4,
-    "difficulty": 2,
-    "text": "Describe a moment when you felt truly alive",
-    "tags": [
-      "deep",
-      "experiential"
-    ],
-    "type": "standard",
-    "points": 2
-  },
-  {
-    "id": "story-13",
-    "category": 4,
-    "difficulty": 2,
-    "text": "What's the biggest risk you've ever taken?",
-    "tags": [
-      "brave",
-      "revealing"
-    ],
-    "type": "standard",
-    "points": 2
-  },
-  {
-    "id": "story-14",
-    "category": 4,
-    "difficulty": 1,
-    "text": "Tell me about your first job",
-    "tags": [
-      "career",
-      "nostalgic"
-    ],
-    "type": "standard",
-    "points": 1
-  },
-  {
-    "id": "story-15",
-    "category": 4,
-    "difficulty": 3,
-    "text": "What's a secret you kept from your parents?",
-    "tags": [
-      "rebellious",
-      "personal"
-    ],
-    "type": "standard",
-    "points": 3
-  },
-  {
-    "id": "story-16",
-    "category": 4,
-    "difficulty": 2,
-    "text": "Describe the moment you realized you were becoming an adult",
-    "tags": [
-      "growth",
-      "thoughtful"
-    ],
-    "type": "standard",
-    "points": 2
-  },
-  {
-    "id": "story-17",
-    "category": 4,
-    "difficulty": 1,
-    "text": "What's your family's weirdest tradition?",
-    "tags": [
-      "family",
-      "funny"
-    ],
-    "type": "standard",
-    "points": 1
-  },
-  {
-    "id": "story-18",
-    "category": 4,
-    "difficulty": 2,
-    "text": "Tell me about a time you stood up for something you believed in",
-    "tags": [
-      "brave",
-      "values"
-    ],
-    "type": "standard",
-    "points": 2
-  },
-  {
-    "id": "story-19",
-    "category": 4,
-    "difficulty": 3,
-    "text": "What's the hardest goodbye you've ever had to say?",
-    "tags": [
-      "emotional",
-      "deep"
-    ],
-    "type": "standard",
-    "points": 3
-  },
-  {
-    "id": "story-20",
-    "category": 4,
-    "difficulty": 1,
-    "text": "What's the most spontaneous thing you've ever done?",
-    "tags": [
-      "adventurous",
-      "fun"
-    ],
-    "type": "standard",
-    "points": 1
-  },
-  {
-    "id": "spicy-1",
-    "category": 5,
-    "difficulty": 2,
-    "text": "What did you notice first about me physically?",
-    "tags": [
-      "flirty",
-      "romantic"
-    ],
-    "type": "standard",
-    "points": 2
-  },
-  {
-    "id": "spicy-2",
-    "category": 5,
-    "difficulty": 2,
-    "text": "Describe your ideal romantic evening",
-    "tags": [
-      "romantic",
-      "intimate"
-    ],
-    "type": "standard",
-    "points": 2
-  },
-  {
-    "id": "spicy-3",
-    "category": 5,
-    "difficulty": 3,
-    "text": "What's something you've always wanted to try but haven't?",
-    "followUp": "Would you want to try it with me?",
-    "tags": [
-      "adventurous",
-      "suggestive"
-    ],
-    "type": "standard",
-    "points": 3
-  },
-  {
-    "id": "spicy-4",
-    "category": 5,
-    "difficulty": 1,
-    "text": "What's your biggest turn-on?",
-    "tags": [
-      "flirty",
-      "revealing"
-    ],
-    "type": "standard",
-    "points": 1
-  },
-  {
-    "id": "spicy-5",
-    "category": 5,
-    "difficulty": 2,
-    "text": "What's your love language?",
-    "followUp": "Give an example of how you like to receive it",
-    "tags": [
-      "romantic",
-      "relationship"
-    ],
-    "type": "standard",
-    "points": 2
-  },
-  {
-    "id": "spicy-6",
-    "category": 5,
-    "difficulty": 3,
-    "text": "What's your biggest fantasy?",
-    "tags": [
-      "intimate",
-      "revealing"
-    ],
-    "type": "standard",
-    "points": 3
-  },
-  {
-    "id": "spicy-7",
-    "category": 5,
-    "difficulty": 1,
-    "text": "Where's the wildest place you've kissed someone?",
-    "tags": [
-      "flirty",
-      "fun"
-    ],
-    "type": "standard",
-    "points": 1
-  },
-  {
-    "id": "spicy-8",
-    "category": 5,
-    "difficulty": 2,
-    "text": "Both answer: What's your idea of perfect foreplay?",
-    "tags": [
-      "intimate",
-      "romantic"
-    ],
-    "type": "both-answer",
-    "points": 2
-  },
-  {
-    "id": "spicy-9",
-    "category": 5,
-    "difficulty": 1,
-    "text": "What outfit of mine do you find most attractive?",
-    "tags": [
-      "flirty",
-      "personal"
-    ],
-    "type": "standard",
-    "points": 1
-  },
-  {
-    "id": "spicy-10",
-    "category": 5,
-    "difficulty": 3,
-    "text": "What's something you want to do to me right now?",
-    "tags": [
-      "intimate",
-      "bold"
-    ],
-    "type": "standard",
-    "points": 3
-  },
-  {
-    "id": "spicy-11",
-    "category": 5,
-    "difficulty": 2,
-    "text": "Describe your perfect morning after",
-    "tags": [
-      "romantic",
-      "intimate"
-    ],
-    "type": "standard",
-    "points": 2
-  },
-  {
-    "id": "spicy-12",
-    "category": 5,
-    "difficulty": 1,
-    "text": "What's your favorite body part on yourself? On a partner?",
-    "tags": [
-      "flirty",
-      "physical"
-    ],
-    "type": "standard",
-    "points": 1
-  },
-  {
-    "id": "spicy-13",
-    "category": 5,
-    "difficulty": 2,
-    "text": "What's the most attractive quality someone can have?",
-    "tags": [
-      "romantic",
-      "values"
-    ],
-    "type": "standard",
-    "points": 2
-  },
-  {
-    "id": "spicy-14",
-    "category": 5,
-    "difficulty": 3,
-    "text": "What's your ultimate guilty pleasure?",
-    "tags": [
-      "revealing",
-      "intimate"
-    ],
-    "type": "standard",
-    "points": 3
-  },
-  {
-    "id": "spicy-15",
-    "category": 5,
-    "difficulty": 1,
-    "text": "Challenge: Give your partner a compliment that makes them blush",
-    "tags": [
-      "flirty",
-      "interactive"
-    ],
-    "type": "challenge",
-    "points": 1
-  },
-  {
-    "id": "spicy-16",
-    "category": 5,
-    "difficulty": 2,
-    "text": "What's your idea of perfect chemistry?",
-    "tags": [
-      "romantic",
-      "thoughtful"
-    ],
-    "type": "standard",
-    "points": 2
-  },
-  {
-    "id": "spicy-17",
-    "category": 5,
-    "difficulty": 3,
-    "text": "What's something you've never told a partner but want to?",
-    "tags": [
-      "vulnerable",
-      "intimate"
-    ],
-    "type": "standard",
-    "points": 3
-  },
-  {
-    "id": "spicy-18",
-    "category": 5,
-    "difficulty": 1,
-    "text": "How do you like to be kissed?",
-    "tags": [
-      "intimate",
-      "instructive"
-    ],
-    "type": "standard",
-    "points": 1
-  },
-  {
-    "id": "spicy-19",
-    "category": 5,
-    "difficulty": 2,
-    "text": "What song puts you in the mood?",
-    "tags": [
-      "music",
-      "romantic"
-    ],
-    "type": "standard",
-    "points": 2
-  },
-  {
-    "id": "spicy-20",
-    "category": 5,
-    "difficulty": 3,
-    "text": "What's your biggest relationship deal-breaker?",
-    "tags": [
-      "serious",
-      "boundaries"
-    ],
-    "type": "standard",
-    "points": 3
-  },
-  {
-    "id": "deep-1",
-    "category": 6,
-    "difficulty": 3,
-    "text": "What's a fear you haven't told many people?",
-    "tags": [
-      "vulnerable",
-      "personal"
-    ],
-    "type": "standard",
-    "points": 3
-  },
-  {
-    "id": "deep-2",
-    "category": 6,
-    "difficulty": 3,
-    "text": "When was the last time you cried and why?",
-    "tags": [
-      "emotional",
-      "vulnerable"
-    ],
-    "type": "standard",
-    "points": 3
-  },
-  {
-    "id": "deep-3",
-    "category": 6,
-    "difficulty": 3,
-    "text": "What's something you need to forgive yourself for?",
-    "tags": [
-      "healing",
-      "personal"
-    ],
-    "type": "standard",
-    "points": 3
-  },
-  {
-    "id": "deep-4",
-    "category": 6,
-    "difficulty": 2,
-    "text": "What do you think happens after we die?",
-    "tags": [
-      "philosophical",
-      "spiritual"
-    ],
-    "type": "standard",
-    "points": 2
-  },
-  {
-    "id": "deep-5",
-    "category": 6,
-    "difficulty": 3,
-    "text": "What's your biggest insecurity?",
-    "tags": [
-      "vulnerable",
-      "brave"
-    ],
-    "type": "standard",
-    "points": 3
-  },
-  {
-    "id": "deep-6",
-    "category": 6,
-    "difficulty": 2,
-    "text": "What would you change about your childhood?",
-    "tags": [
-      "past",
-      "reflective"
-    ],
-    "type": "standard",
-    "points": 2
-  },
-  {
-    "id": "deep-7",
-    "category": 6,
-    "difficulty": 3,
-    "text": "What part of yourself do you hide from most people?",
-    "tags": [
-      "vulnerable",
-      "authentic"
-    ],
-    "type": "standard",
-    "points": 3
-  },
-  {
-    "id": "deep-8",
-    "category": 6,
-    "difficulty": 2,
-    "text": "Both share: What makes you feel most loved?",
-    "tags": [
-      "emotional",
-      "relationship"
-    ],
-    "type": "both-answer",
-    "points": 2
-  },
-  {
-    "id": "deep-9",
-    "category": 6,
-    "difficulty": 3,
-    "text": "What's the hardest truth you've had to accept?",
-    "tags": [
-      "growth",
-      "difficult"
-    ],
-    "type": "standard",
-    "points": 3
-  },
-  {
-    "id": "deep-10",
-    "category": 6,
-    "difficulty": 2,
-    "text": "How has heartbreak changed you?",
-    "tags": [
-      "emotional",
-      "growth"
-    ],
-    "type": "standard",
-    "points": 2
-  },
-  {
-    "id": "deep-11",
-    "category": 6,
-    "difficulty": 3,
-    "text": "What do you struggle to ask for help with?",
-    "tags": [
-      "vulnerable",
-      "pride"
-    ],
-    "type": "standard",
-    "points": 3
-  },
-  {
-    "id": "deep-12",
-    "category": 6,
-    "difficulty": 2,
-    "text": "What belief have you held the longest?",
-    "tags": [
-      "values",
-      "core"
-    ],
-    "type": "standard",
-    "points": 2
-  },
-  {
-    "id": "deep-13",
-    "category": 6,
-    "difficulty": 3,
-    "text": "What are you most ashamed of?",
-    "tags": [
-      "vulnerable",
-      "difficult"
-    ],
-    "type": "standard",
-    "points": 3
-  },
-  {
-    "id": "deep-14",
-    "category": 6,
-    "difficulty": 2,
-    "text": "How do you deal with loneliness?",
-    "tags": [
-      "emotional",
-      "coping"
-    ],
-    "type": "standard",
-    "points": 2
-  },
-  {
-    "id": "deep-15",
-    "category": 6,
-    "difficulty": 3,
-    "text": "What would you tell your younger self?",
-    "tags": [
-      "wisdom",
-      "reflective"
-    ],
-    "type": "standard",
-    "points": 3
-  },
-  {
-    "id": "deep-16",
-    "category": 6,
-    "difficulty": 2,
-    "text": "What makes you feel most alive?",
-    "tags": [
-      "positive",
-      "meaningful"
-    ],
-    "type": "standard",
-    "points": 2
-  },
-  {
-    "id": "deep-17",
-    "category": 6,
-    "difficulty": 3,
-    "text": "What are you running from?",
-    "tags": [
-      "challenging",
-      "introspective"
-    ],
-    "type": "standard",
-    "points": 3
-  },
-  {
-    "id": "deep-18",
-    "category": 6,
-    "difficulty": 2,
-    "text": "How do you want to be remembered?",
-    "tags": [
-      "legacy",
-      "values"
-    ],
-    "type": "standard",
-    "points": 2
-  },
-  {
-    "id": "deep-19",
-    "category": 6,
-    "difficulty": 3,
-    "text": "What truth about yourself do you avoid?",
-    "tags": [
-      "challenging",
-      "growth"
-    ],
-    "type": "standard",
-    "points": 3
-  },
-  {
-    "id": "deep-20",
-    "category": 6,
-    "difficulty": 2,
-    "text": "What gives your life meaning?",
-    "tags": [
-      "philosophical",
-      "purpose"
-    ],
-    "type": "standard",
-    "points": 2
-  }
+	{
+		"id": "ice-1",
+		"category": 1,
+		"difficulty": 1,
+		"text": "What's the weirdest food combination you enjoy?",
+		"tags": ["funny", "light"],
+		"type": "standard",
+		"points": 1
+	},
+	{
+		"id": "ice-2",
+		"category": 1,
+		"difficulty": 1,
+		"text": "What's your go-to karaoke song?",
+		"tags": ["fun", "music"],
+		"type": "standard",
+		"points": 1
+	},
+	{
+		"id": "ice-3",
+		"category": 1,
+		"difficulty": 1,
+		"text": "If you could have dinner with anyone dead or alive, who would it be?",
+		"tags": ["thoughtful", "light"],
+		"type": "standard",
+		"points": 1
+	},
+	{
+		"id": "ice-4",
+		"category": 1,
+		"difficulty": 1,
+		"text": "What's your most unpopular opinion about food?",
+		"tags": ["funny", "controversial"],
+		"type": "standard",
+		"points": 1
+	},
+	{
+		"id": "ice-5",
+		"category": 1,
+		"difficulty": 1,
+		"text": "What's the last thing you Googled?",
+		"tags": ["funny", "revealing"],
+		"type": "standard",
+		"points": 1
+	},
+	{
+		"id": "ice-6",
+		"category": 1,
+		"difficulty": 2,
+		"text": "What's a skill you're secretly proud of?",
+		"tags": ["personal", "light"],
+		"type": "standard",
+		"points": 2
+	},
+	{
+		"id": "ice-7",
+		"category": 1,
+		"difficulty": 2,
+		"text": "What's the most spontaneous thing you've ever done?",
+		"tags": ["adventurous", "story"],
+		"type": "standard",
+		"points": 2
+	},
+	{
+		"id": "ice-8",
+		"category": 1,
+		"difficulty": 2,
+		"text": "If you had to delete all but 3 apps from your phone, which ones would you keep?",
+		"tags": ["modern", "revealing"],
+		"type": "standard",
+		"points": 2
+	},
+	{
+		"id": "ice-9",
+		"category": 1,
+		"difficulty": 2,
+		"text": "What's your biggest pet peeve?",
+		"tags": ["personal", "funny"],
+		"type": "standard",
+		"points": 2
+	},
+	{
+		"id": "ice-10",
+		"category": 1,
+		"difficulty": 2,
+		"text": "What conspiracy theory do you secretly think might be true?",
+		"tags": ["funny", "controversial"],
+		"type": "standard",
+		"points": 2
+	},
+	{
+		"id": "ice-11",
+		"category": 1,
+		"difficulty": 1,
+		"text": "What's your spirit animal and why?",
+		"tags": ["fun", "personality"],
+		"type": "standard",
+		"points": 1
+	},
+	{
+		"id": "ice-12",
+		"category": 1,
+		"difficulty": 1,
+		"text": "If you could live in any TV show universe, which would it be?",
+		"tags": ["fun", "media"],
+		"type": "standard",
+		"points": 1
+	},
+	{
+		"id": "ice-13",
+		"category": 1,
+		"difficulty": 2,
+		"text": "What's the most embarrassing thing you've done for love?",
+		"tags": ["romantic", "funny"],
+		"type": "standard",
+		"points": 2
+	},
+	{
+		"id": "ice-14",
+		"category": 1,
+		"difficulty": 3,
+		"text": "What's something you've never told anyone?",
+		"tags": ["vulnerable", "deep"],
+		"type": "standard",
+		"points": 3
+	},
+	{
+		"id": "ice-15",
+		"category": 1,
+		"difficulty": 1,
+		"text": "Both describe your perfect pizza - then see if they match!",
+		"tags": ["fun", "food"],
+		"type": "both-answer",
+		"points": 1
+	},
+	{
+		"id": "ice-16",
+		"category": 1,
+		"difficulty": 2,
+		"text": "What's your most irrational fear?",
+		"tags": ["personal", "vulnerable"],
+		"type": "standard",
+		"points": 2
+	},
+	{
+		"id": "ice-17",
+		"category": 1,
+		"difficulty": 1,
+		"text": "Show me your most used emoji and explain why",
+		"tags": ["modern", "fun"],
+		"type": "challenge",
+		"points": 1
+	},
+	{
+		"id": "ice-18",
+		"category": 1,
+		"difficulty": 2,
+		"text": "What's a trend you're too old to understand?",
+		"tags": ["funny", "modern"],
+		"type": "standard",
+		"points": 2
+	},
+	{
+		"id": "ice-19",
+		"category": 1,
+		"difficulty": 3,
+		"text": "What's your biggest regret from your teenage years?",
+		"tags": ["vulnerable", "past"],
+		"type": "standard",
+		"points": 3
+	},
+	{
+		"id": "ice-20",
+		"category": 1,
+		"difficulty": 1,
+		"text": "If you were a flavor of ice cream, what would you be?",
+		"tags": ["fun", "personality"],
+		"type": "standard",
+		"points": 1
+	},
+	{
+		"id": "dreams-1",
+		"category": 2,
+		"difficulty": 1,
+		"text": "Describe your perfect day from sunrise to sunset",
+		"tags": ["thoughtful", "revealing"],
+		"type": "standard",
+		"points": 1
+	},
+	{
+		"id": "dreams-2",
+		"category": 2,
+		"difficulty": 1,
+		"text": "If money wasn't a factor, what would you do tomorrow?",
+		"tags": ["dreams", "revealing"],
+		"type": "standard",
+		"points": 1
+	},
+	{
+		"id": "dreams-3",
+		"category": 2,
+		"difficulty": 2,
+		"text": "What skill do you wish you had mastered?",
+		"tags": ["personal", "aspirational"],
+		"type": "standard",
+		"points": 2
+	},
+	{
+		"id": "dreams-4",
+		"category": 2,
+		"difficulty": 1,
+		"text": "Where do you see yourself in 5 years?",
+		"followUp": "What about 10 years?",
+		"tags": ["future", "serious"],
+		"type": "standard",
+		"points": 1
+	},
+	{
+		"id": "dreams-5",
+		"category": 2,
+		"difficulty": 2,
+		"text": "What's on your bucket list that you're scared to try?",
+		"tags": ["vulnerable", "adventurous"],
+		"type": "standard",
+		"points": 2
+	},
+	{
+		"id": "dreams-6",
+		"category": 2,
+		"difficulty": 1,
+		"text": "If you could master any instrument overnight, which one?",
+		"tags": ["music", "dreams"],
+		"type": "standard",
+		"points": 1
+	},
+	{
+		"id": "dreams-7",
+		"category": 2,
+		"difficulty": 2,
+		"text": "What's a dream you've given up on? Would you reconsider?",
+		"tags": ["vulnerable", "deep"],
+		"type": "standard",
+		"points": 2
+	},
+	{
+		"id": "dreams-8",
+		"category": 2,
+		"difficulty": 3,
+		"text": "What legacy do you want to leave behind?",
+		"tags": ["deep", "philosophical"],
+		"type": "standard",
+		"points": 3
+	},
+	{
+		"id": "dreams-9",
+		"category": 2,
+		"difficulty": 1,
+		"text": "Both describe your dream vacation - see if you'd travel together!",
+		"tags": ["travel", "fun"],
+		"type": "both-answer",
+		"points": 1
+	},
+	{
+		"id": "dreams-10",
+		"category": 2,
+		"difficulty": 2,
+		"text": "What's the craziest adventure you want to go on?",
+		"tags": ["adventurous", "exciting"],
+		"type": "standard",
+		"points": 2
+	},
+	{
+		"id": "dreams-11",
+		"category": 2,
+		"difficulty": 1,
+		"text": "If you could live anywhere in the world, where and why?",
+		"tags": ["travel", "dreams"],
+		"type": "standard",
+		"points": 1
+	},
+	{
+		"id": "dreams-12",
+		"category": 2,
+		"difficulty": 2,
+		"text": "What career would you pursue if you could start over?",
+		"tags": ["career", "thoughtful"],
+		"type": "standard",
+		"points": 2
+	},
+	{
+		"id": "dreams-13",
+		"category": 2,
+		"difficulty": 3,
+		"text": "What scares you most about the future?",
+		"tags": ["vulnerable", "deep"],
+		"type": "standard",
+		"points": 3
+	},
+	{
+		"id": "dreams-14",
+		"category": 2,
+		"difficulty": 1,
+		"text": "What superpower would help you achieve your dreams?",
+		"tags": ["fun", "imaginative"],
+		"type": "standard",
+		"points": 1
+	},
+	{
+		"id": "dreams-15",
+		"category": 2,
+		"difficulty": 2,
+		"text": "What's a goal you're working on that nobody knows about?",
+		"tags": ["personal", "revealing"],
+		"type": "standard",
+		"points": 2
+	},
+	{
+		"id": "dreams-16",
+		"category": 2,
+		"difficulty": 1,
+		"text": "If you won the lottery today, what's the first thing you'd do?",
+		"tags": ["fun", "money"],
+		"type": "standard",
+		"points": 1
+	},
+	{
+		"id": "dreams-17",
+		"category": 2,
+		"difficulty": 3,
+		"text": "What dream have you been too afraid to pursue?",
+		"tags": ["vulnerable", "deep"],
+		"type": "standard",
+		"points": 3
+	},
+	{
+		"id": "dreams-18",
+		"category": 2,
+		"difficulty": 2,
+		"text": "Describe your ideal life at 80 years old",
+		"tags": ["future", "thoughtful"],
+		"type": "standard",
+		"points": 2
+	},
+	{
+		"id": "dreams-19",
+		"category": 2,
+		"difficulty": 1,
+		"text": "What hobby have you always wanted to pick up?",
+		"tags": ["personal", "aspirational"],
+		"type": "standard",
+		"points": 1
+	},
+	{
+		"id": "dreams-20",
+		"category": 2,
+		"difficulty": 2,
+		"text": "If you could change one thing about the world, what would it be?",
+		"tags": ["thoughtful", "idealistic"],
+		"type": "standard",
+		"points": 2
+	},
+	{
+		"id": "wyr-1",
+		"category": 3,
+		"difficulty": 1,
+		"text": "Would you rather be able to fly or be invisible?",
+		"tags": ["classic", "fun"],
+		"type": "standard",
+		"points": 1
+	},
+	{
+		"id": "wyr-2",
+		"category": 3,
+		"difficulty": 1,
+		"text": "Would you rather live in the mountains or by the beach?",
+		"tags": ["lifestyle", "preference"],
+		"type": "standard",
+		"points": 1
+	},
+	{
+		"id": "wyr-3",
+		"category": 3,
+		"difficulty": 1,
+		"text": "Would you rather have more time or more money?",
+		"tags": ["philosophical", "values"],
+		"type": "standard",
+		"points": 1
+	},
+	{
+		"id": "wyr-4",
+		"category": 3,
+		"difficulty": 2,
+		"text": "Would you rather know when you'll die or how you'll die?",
+		"tags": ["dark", "philosophical"],
+		"type": "standard",
+		"points": 2
+	},
+	{
+		"id": "wyr-5",
+		"category": 3,
+		"difficulty": 1,
+		"text": "Would you rather never use social media again or never watch TV/movies again?",
+		"tags": ["modern", "lifestyle"],
+		"type": "standard",
+		"points": 1
+	},
+	{
+		"id": "wyr-6",
+		"category": 3,
+		"difficulty": 2,
+		"text": "Would you rather be famous but lonely or unknown but loved?",
+		"tags": ["deep", "values"],
+		"type": "standard",
+		"points": 2
+	},
+	{
+		"id": "wyr-7",
+		"category": 3,
+		"difficulty": 1,
+		"text": "Would you rather always be 10 minutes late or 20 minutes early?",
+		"tags": ["personality", "funny"],
+		"type": "standard",
+		"points": 1
+	},
+	{
+		"id": "wyr-8",
+		"category": 3,
+		"difficulty": 2,
+		"text": "Would you rather lose all your memories or never be able to make new ones?",
+		"tags": ["deep", "philosophical"],
+		"type": "standard",
+		"points": 2
+	},
+	{
+		"id": "wyr-9",
+		"category": 3,
+		"difficulty": 1,
+		"text": "Both answer: Would you rather have a pause button or a rewind button for life?",
+		"tags": ["philosophical", "fun"],
+		"type": "both-answer",
+		"points": 1
+	},
+	{
+		"id": "wyr-10",
+		"category": 3,
+		"difficulty": 3,
+		"text": "Would you rather find true love or achieve your biggest dream?",
+		"tags": ["romantic", "deep"],
+		"type": "standard",
+		"points": 3
+	},
+	{
+		"id": "wyr-11",
+		"category": 3,
+		"difficulty": 1,
+		"text": "Would you rather be able to talk to animals or speak all human languages?",
+		"tags": ["fun", "imaginative"],
+		"type": "standard",
+		"points": 1
+	},
+	{
+		"id": "wyr-12",
+		"category": 3,
+		"difficulty": 2,
+		"text": "Would you rather give up your phone for a month or your best friend for a month?",
+		"tags": ["modern", "relationships"],
+		"type": "standard",
+		"points": 2
+	},
+	{
+		"id": "wyr-13",
+		"category": 3,
+		"difficulty": 1,
+		"text": "Would you rather always have to sing instead of speak or dance everywhere you go?",
+		"tags": ["funny", "silly"],
+		"type": "standard",
+		"points": 1
+	},
+	{
+		"id": "wyr-14",
+		"category": 3,
+		"difficulty": 2,
+		"text": "Would you rather be able to change the past or see the future?",
+		"tags": ["philosophical", "power"],
+		"type": "standard",
+		"points": 2
+	},
+	{
+		"id": "wyr-15",
+		"category": 3,
+		"difficulty": 1,
+		"text": "Would you rather never have to sleep or never have to eat?",
+		"tags": ["practical", "fun"],
+		"type": "standard",
+		"points": 1
+	},
+	{
+		"id": "wyr-16",
+		"category": 3,
+		"difficulty": 3,
+		"text": "Would you rather know all the world's secrets or have the power to change one thing?",
+		"tags": ["philosophical", "power"],
+		"type": "standard",
+		"points": 3
+	},
+	{
+		"id": "wyr-17",
+		"category": 3,
+		"difficulty": 1,
+		"text": "Would you rather be the funniest or the smartest person in the room?",
+		"tags": ["personality", "values"],
+		"type": "standard",
+		"points": 1
+	},
+	{
+		"id": "wyr-18",
+		"category": 3,
+		"difficulty": 2,
+		"text": "Would you rather never be able to lie or never be able to tell the truth?",
+		"tags": ["ethical", "challenging"],
+		"type": "standard",
+		"points": 2
+	},
+	{
+		"id": "wyr-19",
+		"category": 3,
+		"difficulty": 1,
+		"text": "Would you rather have a perfect memory or be able to forget anything you want?",
+		"tags": ["memory", "philosophical"],
+		"type": "standard",
+		"points": 1
+	},
+	{
+		"id": "wyr-20",
+		"category": 3,
+		"difficulty": 2,
+		"text": "Would you rather always know when someone is lying or always get away with lying?",
+		"tags": ["ethical", "power"],
+		"type": "standard",
+		"points": 2
+	},
+	{
+		"id": "story-1",
+		"category": 4,
+		"difficulty": 2,
+		"text": "Tell me about a time you were really proud of yourself",
+		"tags": ["positive", "personal"],
+		"type": "standard",
+		"points": 2
+	},
+	{
+		"id": "story-2",
+		"category": 4,
+		"difficulty": 2,
+		"text": "What's your most embarrassing story that you can laugh about now?",
+		"tags": ["funny", "vulnerable"],
+		"type": "standard",
+		"points": 2
+	},
+	{
+		"id": "story-3",
+		"category": 4,
+		"difficulty": 3,
+		"text": "Describe your first kiss",
+		"tags": ["romantic", "personal"],
+		"type": "standard",
+		"points": 3
+	},
+	{
+		"id": "story-4",
+		"category": 4,
+		"difficulty": 1,
+		"text": "What's the best compliment you've ever received?",
+		"tags": ["positive", "memorable"],
+		"type": "standard",
+		"points": 1
+	},
+	{
+		"id": "story-5",
+		"category": 4,
+		"difficulty": 2,
+		"text": "Tell me about your worst date ever",
+		"tags": ["funny", "dating"],
+		"type": "standard",
+		"points": 2
+	},
+	{
+		"id": "story-6",
+		"category": 4,
+		"difficulty": 1,
+		"text": "What's your favorite childhood memory?",
+		"tags": ["nostalgic", "sweet"],
+		"type": "standard",
+		"points": 1
+	},
+	{
+		"id": "story-7",
+		"category": 4,
+		"difficulty": 3,
+		"text": "Tell me about a time you completely changed your mind about something important",
+		"tags": ["growth", "deep"],
+		"type": "standard",
+		"points": 3
+	},
+	{
+		"id": "story-8",
+		"category": 4,
+		"difficulty": 2,
+		"text": "What's the most trouble you got into as a kid?",
+		"tags": ["funny", "childhood"],
+		"type": "standard",
+		"points": 2
+	},
+	{
+		"id": "story-9",
+		"category": 4,
+		"difficulty": 1,
+		"text": "Both share: Your most epic fail story",
+		"tags": ["funny", "vulnerable"],
+		"type": "both-answer",
+		"points": 1
+	},
+	{
+		"id": "story-10",
+		"category": 4,
+		"difficulty": 3,
+		"text": "Tell me about someone who changed your life",
+		"tags": ["deep", "personal"],
+		"type": "standard",
+		"points": 3
+	},
+	{
+		"id": "story-11",
+		"category": 4,
+		"difficulty": 1,
+		"text": "What's the luckiest thing that's ever happened to you?",
+		"tags": ["positive", "interesting"],
+		"type": "standard",
+		"points": 1
+	},
+	{
+		"id": "story-12",
+		"category": 4,
+		"difficulty": 2,
+		"text": "Describe a moment when you felt truly alive",
+		"tags": ["deep", "experiential"],
+		"type": "standard",
+		"points": 2
+	},
+	{
+		"id": "story-13",
+		"category": 4,
+		"difficulty": 2,
+		"text": "What's the biggest risk you've ever taken?",
+		"tags": ["brave", "revealing"],
+		"type": "standard",
+		"points": 2
+	},
+	{
+		"id": "story-14",
+		"category": 4,
+		"difficulty": 1,
+		"text": "Tell me about your first job",
+		"tags": ["career", "nostalgic"],
+		"type": "standard",
+		"points": 1
+	},
+	{
+		"id": "story-15",
+		"category": 4,
+		"difficulty": 3,
+		"text": "What's a secret you kept from your parents?",
+		"tags": ["rebellious", "personal"],
+		"type": "standard",
+		"points": 3
+	},
+	{
+		"id": "story-16",
+		"category": 4,
+		"difficulty": 2,
+		"text": "Describe the moment you realized you were becoming an adult",
+		"tags": ["growth", "thoughtful"],
+		"type": "standard",
+		"points": 2
+	},
+	{
+		"id": "story-17",
+		"category": 4,
+		"difficulty": 1,
+		"text": "What's your family's weirdest tradition?",
+		"tags": ["family", "funny"],
+		"type": "standard",
+		"points": 1
+	},
+	{
+		"id": "story-18",
+		"category": 4,
+		"difficulty": 2,
+		"text": "Tell me about a time you stood up for something you believed in",
+		"tags": ["brave", "values"],
+		"type": "standard",
+		"points": 2
+	},
+	{
+		"id": "story-19",
+		"category": 4,
+		"difficulty": 3,
+		"text": "What's the hardest goodbye you've ever had to say?",
+		"tags": ["emotional", "deep"],
+		"type": "standard",
+		"points": 3
+	},
+	{
+		"id": "story-20",
+		"category": 4,
+		"difficulty": 1,
+		"text": "What's the most spontaneous thing you've ever done?",
+		"tags": ["adventurous", "fun"],
+		"type": "standard",
+		"points": 1
+	},
+	{
+		"id": "spicy-1",
+		"category": 5,
+		"difficulty": 2,
+		"text": "What did you notice first about me physically?",
+		"tags": ["flirty", "romantic"],
+		"type": "standard",
+		"points": 2
+	},
+	{
+		"id": "spicy-2",
+		"category": 5,
+		"difficulty": 2,
+		"text": "Describe your ideal romantic evening",
+		"tags": ["romantic", "intimate"],
+		"type": "standard",
+		"points": 2
+	},
+	{
+		"id": "spicy-3",
+		"category": 5,
+		"difficulty": 3,
+		"text": "What's something you've always wanted to try but haven't?",
+		"followUp": "Would you want to try it with me?",
+		"tags": ["adventurous", "suggestive"],
+		"type": "standard",
+		"points": 3
+	},
+	{
+		"id": "spicy-4",
+		"category": 5,
+		"difficulty": 1,
+		"text": "What's your biggest turn-on?",
+		"tags": ["flirty", "revealing"],
+		"type": "standard",
+		"points": 1
+	},
+	{
+		"id": "spicy-5",
+		"category": 5,
+		"difficulty": 2,
+		"text": "What's your love language?",
+		"followUp": "Give an example of how you like to receive it",
+		"tags": ["romantic", "relationship"],
+		"type": "standard",
+		"points": 2
+	},
+	{
+		"id": "spicy-6",
+		"category": 5,
+		"difficulty": 3,
+		"text": "What's your biggest fantasy?",
+		"tags": ["intimate", "revealing"],
+		"type": "standard",
+		"points": 3
+	},
+	{
+		"id": "spicy-7",
+		"category": 5,
+		"difficulty": 1,
+		"text": "Where's the wildest place you've kissed someone?",
+		"tags": ["flirty", "fun"],
+		"type": "standard",
+		"points": 1
+	},
+	{
+		"id": "spicy-8",
+		"category": 5,
+		"difficulty": 2,
+		"text": "Both answer: What's your idea of perfect foreplay?",
+		"tags": ["intimate", "romantic"],
+		"type": "both-answer",
+		"points": 2
+	},
+	{
+		"id": "spicy-9",
+		"category": 5,
+		"difficulty": 1,
+		"text": "What outfit of mine do you find most attractive?",
+		"tags": ["flirty", "personal"],
+		"type": "standard",
+		"points": 1
+	},
+	{
+		"id": "spicy-10",
+		"category": 5,
+		"difficulty": 3,
+		"text": "What's something you want to do to me right now?",
+		"tags": ["intimate", "bold"],
+		"type": "standard",
+		"points": 3
+	},
+	{
+		"id": "spicy-11",
+		"category": 5,
+		"difficulty": 2,
+		"text": "Describe your perfect morning after",
+		"tags": ["romantic", "intimate"],
+		"type": "standard",
+		"points": 2
+	},
+	{
+		"id": "spicy-12",
+		"category": 5,
+		"difficulty": 1,
+		"text": "What's your favorite body part on yourself? On a partner?",
+		"tags": ["flirty", "physical"],
+		"type": "standard",
+		"points": 1
+	},
+	{
+		"id": "spicy-13",
+		"category": 5,
+		"difficulty": 2,
+		"text": "What's the most attractive quality someone can have?",
+		"tags": ["romantic", "values"],
+		"type": "standard",
+		"points": 2
+	},
+	{
+		"id": "spicy-14",
+		"category": 5,
+		"difficulty": 3,
+		"text": "What's your ultimate guilty pleasure?",
+		"tags": ["revealing", "intimate"],
+		"type": "standard",
+		"points": 3
+	},
+	{
+		"id": "spicy-15",
+		"category": 5,
+		"difficulty": 1,
+		"text": "Challenge: Give your partner a compliment that makes them blush",
+		"tags": ["flirty", "interactive"],
+		"type": "challenge",
+		"points": 1
+	},
+	{
+		"id": "spicy-16",
+		"category": 5,
+		"difficulty": 2,
+		"text": "What's your idea of perfect chemistry?",
+		"tags": ["romantic", "thoughtful"],
+		"type": "standard",
+		"points": 2
+	},
+	{
+		"id": "spicy-17",
+		"category": 5,
+		"difficulty": 3,
+		"text": "What's something you've never told a partner but want to?",
+		"tags": ["vulnerable", "intimate"],
+		"type": "standard",
+		"points": 3
+	},
+	{
+		"id": "spicy-18",
+		"category": 5,
+		"difficulty": 1,
+		"text": "How do you like to be kissed?",
+		"tags": ["intimate", "instructive"],
+		"type": "standard",
+		"points": 1
+	},
+	{
+		"id": "spicy-19",
+		"category": 5,
+		"difficulty": 2,
+		"text": "What song puts you in the mood?",
+		"tags": ["music", "romantic"],
+		"type": "standard",
+		"points": 2
+	},
+	{
+		"id": "spicy-20",
+		"category": 5,
+		"difficulty": 3,
+		"text": "What's your biggest relationship deal-breaker?",
+		"tags": ["serious", "boundaries"],
+		"type": "standard",
+		"points": 3
+	},
+	{
+		"id": "deep-1",
+		"category": 6,
+		"difficulty": 3,
+		"text": "What's a fear you haven't told many people?",
+		"tags": ["vulnerable", "personal"],
+		"type": "standard",
+		"points": 3
+	},
+	{
+		"id": "deep-2",
+		"category": 6,
+		"difficulty": 3,
+		"text": "When was the last time you cried and why?",
+		"tags": ["emotional", "vulnerable"],
+		"type": "standard",
+		"points": 3
+	},
+	{
+		"id": "deep-3",
+		"category": 6,
+		"difficulty": 3,
+		"text": "What's something you need to forgive yourself for?",
+		"tags": ["healing", "personal"],
+		"type": "standard",
+		"points": 3
+	},
+	{
+		"id": "deep-4",
+		"category": 6,
+		"difficulty": 2,
+		"text": "What do you think happens after we die?",
+		"tags": ["philosophical", "spiritual"],
+		"type": "standard",
+		"points": 2
+	},
+	{
+		"id": "deep-5",
+		"category": 6,
+		"difficulty": 3,
+		"text": "What's your biggest insecurity?",
+		"tags": ["vulnerable", "brave"],
+		"type": "standard",
+		"points": 3
+	},
+	{
+		"id": "deep-6",
+		"category": 6,
+		"difficulty": 2,
+		"text": "What would you change about your childhood?",
+		"tags": ["past", "reflective"],
+		"type": "standard",
+		"points": 2
+	},
+	{
+		"id": "deep-7",
+		"category": 6,
+		"difficulty": 3,
+		"text": "What part of yourself do you hide from most people?",
+		"tags": ["vulnerable", "authentic"],
+		"type": "standard",
+		"points": 3
+	},
+	{
+		"id": "deep-8",
+		"category": 6,
+		"difficulty": 2,
+		"text": "Both share: What makes you feel most loved?",
+		"tags": ["emotional", "relationship"],
+		"type": "both-answer",
+		"points": 2
+	},
+	{
+		"id": "deep-9",
+		"category": 6,
+		"difficulty": 3,
+		"text": "What's the hardest truth you've had to accept?",
+		"tags": ["growth", "difficult"],
+		"type": "standard",
+		"points": 3
+	},
+	{
+		"id": "deep-10",
+		"category": 6,
+		"difficulty": 2,
+		"text": "How has heartbreak changed you?",
+		"tags": ["emotional", "growth"],
+		"type": "standard",
+		"points": 2
+	},
+	{
+		"id": "deep-11",
+		"category": 6,
+		"difficulty": 3,
+		"text": "What do you struggle to ask for help with?",
+		"tags": ["vulnerable", "pride"],
+		"type": "standard",
+		"points": 3
+	},
+	{
+		"id": "deep-12",
+		"category": 6,
+		"difficulty": 2,
+		"text": "What belief have you held the longest?",
+		"tags": ["values", "core"],
+		"type": "standard",
+		"points": 2
+	},
+	{
+		"id": "deep-13",
+		"category": 6,
+		"difficulty": 3,
+		"text": "What are you most ashamed of?",
+		"tags": ["vulnerable", "difficult"],
+		"type": "standard",
+		"points": 3
+	},
+	{
+		"id": "deep-14",
+		"category": 6,
+		"difficulty": 2,
+		"text": "How do you deal with loneliness?",
+		"tags": ["emotional", "coping"],
+		"type": "standard",
+		"points": 2
+	},
+	{
+		"id": "deep-15",
+		"category": 6,
+		"difficulty": 3,
+		"text": "What would you tell your younger self?",
+		"tags": ["wisdom", "reflective"],
+		"type": "standard",
+		"points": 3
+	},
+	{
+		"id": "deep-16",
+		"category": 6,
+		"difficulty": 2,
+		"text": "What makes you feel most alive?",
+		"tags": ["positive", "meaningful"],
+		"type": "standard",
+		"points": 2
+	},
+	{
+		"id": "deep-17",
+		"category": 6,
+		"difficulty": 3,
+		"text": "What are you running from?",
+		"tags": ["challenging", "introspective"],
+		"type": "standard",
+		"points": 3
+	},
+	{
+		"id": "deep-18",
+		"category": 6,
+		"difficulty": 2,
+		"text": "How do you want to be remembered?",
+		"tags": ["legacy", "values"],
+		"type": "standard",
+		"points": 2
+	},
+	{
+		"id": "deep-19",
+		"category": 6,
+		"difficulty": 3,
+		"text": "What truth about yourself do you avoid?",
+		"tags": ["challenging", "growth"],
+		"type": "standard",
+		"points": 3
+	},
+	{
+		"id": "deep-20",
+		"category": 6,
+		"difficulty": 2,
+		"text": "What gives your life meaning?",
+		"tags": ["philosophical", "purpose"],
+		"type": "standard",
+		"points": 2
+	}
 ]

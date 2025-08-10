@@ -122,6 +122,7 @@ export interface GameState {
 	bookmarkedQuestions: string[];
 	gamePhase:
 		| "landing"
+		| "multiplayer-setup"
 		| "setup"
 		| "playing"
 		| "awarding-sparks"

@@ -1,7 +1,13 @@
 "use client";
 
 import { type QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { httpBatchStreamLink, loggerLink } from "@trpc/client";
+import {
+	createWSClient,
+	httpBatchStreamLink,
+	loggerLink,
+	splitLink,
+	wsLink,
+} from "@trpc/client";
 import { createTRPCReact } from "@trpc/react-query";
 import type { inferRouterInputs, inferRouterOutputs } from "@trpc/server";
 import { useState } from "react";
@@ -49,14 +55,23 @@ export function TRPCReactProvider(props: { children: React.ReactNode }) {
 						process.env.NODE_ENV === "development" ||
 						(op.direction === "down" && op.result instanceof Error),
 				}),
-				httpBatchStreamLink({
-					transformer: SuperJSON,
-					url: `${getBaseUrl()}/api/trpc`,
-					headers: () => {
-						const headers = new Headers();
-						headers.set("x-trpc-source", "nextjs-react");
-						return headers;
-					},
+				splitLink({
+					condition: (op) => op.type === "subscription",
+					true: wsLink({
+						client: createWSClient({
+							url: getWsUrl(),
+						}),
+						transformer: SuperJSON,
+					}),
+					false: httpBatchStreamLink({
+						transformer: SuperJSON,
+						url: `${getBaseUrl()}/api/trpc`,
+						headers: () => {
+							const headers = new Headers();
+							headers.set("x-trpc-source", "nextjs-react");
+							return headers;
+						},
+					}),
 				}),
 			],
 		}),
@@ -75,4 +90,13 @@ function getBaseUrl() {
 	if (typeof window !== "undefined") return window.location.origin;
 	if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
 	return `http://localhost:${process.env.PORT ?? 3000}`;
+}
+
+function getWsUrl() {
+	if (typeof window !== "undefined") {
+		const protocol = window.location.protocol === "https:" ? "wss:" : "ws:";
+		const host = window.location.hostname;
+		return `${protocol}//${host}:3001`;
+	}
+	return "ws://localhost:3001";
 }
