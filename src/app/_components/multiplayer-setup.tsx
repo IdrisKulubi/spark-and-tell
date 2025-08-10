@@ -3,7 +3,7 @@
 import { useMultiplayerStore } from "@/store/multiplayerStore";
 import { api } from "@/trpc/react";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import React, { useState } from "react";
 
 interface MultiplayerSetupProps {
 	onBack: () => void;
@@ -16,16 +16,34 @@ export function MultiplayerSetup({ onBack }: MultiplayerSetupProps) {
 	const [isLoading, setIsLoading] = useState(false);
 	const [error, setError] = useState("");
 
-	const { setRoomInfo, setPlayers, setConnectionStatus, setWaitingForPlayer } =
+	const { setRoomInfo, setPlayers, setConnectionStatus, setWaitingForPlayer, setGamePhase } =
 		useMultiplayerStore();
+
+	// Check for existing connection on component mount
+	React.useEffect(() => {
+		const savedPlayerId = localStorage.getItem("spark-tell-player-id");
+		const savedRoomId = localStorage.getItem("spark-tell-room-id");
+		
+		if (savedPlayerId && savedRoomId) {
+			console.log("🔄 Found existing session, attempting to reconnect:", {
+				playerId: savedPlayerId,
+				roomId: savedRoomId
+			});
+			
+			// Try to reconnect to existing room
+			setConnectionStatus("connecting");
+			// The GameContainer will handle the reconnection logic
+		}
+	}, [setConnectionStatus]);
 
 	const createRoomMutation = api.game.createRoom.useMutation({
 		onSuccess: (data) => {
+			console.log("🏠 Room created successfully:", data);
 			setRoomInfo(data.roomId, data.roomCode);
 			setPlayers(
 				{
 					id: data.playerId,
-					name: playerName,
+					name: playerName.trim(),
 					isHost: true,
 					isConnected: true,
 					joinedAt: new Date(),
@@ -34,9 +52,14 @@ export function MultiplayerSetup({ onBack }: MultiplayerSetupProps) {
 			);
 			setConnectionStatus("connected");
 			setWaitingForPlayer(true);
+			setGamePhase("setup"); // Set to lobby phase
 			// Store player ID in localStorage for reconnection
 			localStorage.setItem("spark-tell-player-id", data.playerId);
 			localStorage.setItem("spark-tell-room-id", data.roomId);
+			console.log("💾 Stored in localStorage:", {
+				playerId: data.playerId,
+				roomId: data.roomId
+			});
 		},
 		onError: (error) => {
 			setError(error.message);
@@ -46,12 +69,37 @@ export function MultiplayerSetup({ onBack }: MultiplayerSetupProps) {
 
 	const joinRoomMutation = api.game.joinRoom.useMutation({
 		onSuccess: (data) => {
+			console.log("🚪 Joined room successfully:", data);
 			setRoomInfo(data.roomId, data.roomCode);
+			
+			// Set up both players - host info from gameState, guest is current player
+			setPlayers(
+				{
+					id: "", // Host ID will be set by backend events
+					name: data.gameState.settings.player1Name,
+					isHost: true,
+					isConnected: true,
+					joinedAt: new Date(),
+				},
+				{
+					id: data.playerId,
+					name: playerName.trim(),
+					isHost: false,
+					isConnected: true,
+					joinedAt: new Date(),
+				}
+			);
+			
 			setConnectionStatus("connected");
 			setWaitingForPlayer(false);
+			setGamePhase("setup"); // Set to lobby phase
 			// Store player ID in localStorage for reconnection
 			localStorage.setItem("spark-tell-player-id", data.playerId);
 			localStorage.setItem("spark-tell-room-id", data.roomId);
+			console.log("💾 Stored in localStorage:", {
+				playerId: data.playerId,
+				roomId: data.roomId
+			});
 		},
 		onError: (error) => {
 			setError(error.message);

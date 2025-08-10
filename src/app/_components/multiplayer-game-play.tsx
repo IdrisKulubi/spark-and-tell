@@ -70,7 +70,12 @@ export function MultiplayerGamePlay() {
 			const question = availableQuestions[randomIndex];
 
 			if (question) {
-				// Update local state via event
+				console.log("🎯 Selecting question locally:", {
+					questionId: question.id,
+					questionText: question.text
+				});
+				
+				// Update local state via event (temporary fix)
 				handleGameEvent({
 					type: "QUESTION_SELECTED",
 					payload: { question },
@@ -99,18 +104,30 @@ export function MultiplayerGamePlay() {
 	};
 
 	const handleAnswerComplete = () => {
-		// Just move to awarding phase locally
+		// Move to awarding phase locally (temporary fix)
 		handleGameEvent({
 			type: "ANSWER_COMPLETED",
 			payload: { playerId },
 		});
 	};
 
-	const currentPlayerName =
-		currentTurn === 1 ? settings.player1Name : settings.player2Name;
-	const otherPlayerName =
-		currentTurn === 1 ? settings.player2Name : settings.player1Name;
+	// Use actual player names from the players object, not settings
+	const currentPlayerName = currentTurn === 1 ? players.host.name : (players.guest?.name || "Player 2");
+	const otherPlayerName = currentTurn === 1 ? (players.guest?.name || "Player 2") : players.host.name;
 	const isAwarding = !isMyTurn && gamePhase === "awarding-sparks";
+
+	// Temporary debug logs to verify turn logic
+	console.log("🎯 Turn Debug:", {
+		currentTurn,
+		isMyTurn,
+		playerId,
+		hostId: players.host.id,
+		hostName: players.host.name,
+		guestId: players.guest?.id,
+		guestName: players.guest?.name,
+		currentPlayerName,
+		otherPlayerName
+	});
 
 	return (
 		<div className="min-h-screen bg-gradient-to-br from-pink-500 via-purple-600 to-indigo-700 p-3 sm:p-4">

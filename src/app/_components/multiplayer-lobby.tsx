@@ -4,7 +4,30 @@ import { useMultiplayerStore } from "@/store/multiplayerStore";
 import { api } from "@/trpc/react";
 import type { DateType, GameLength } from "@/types/game";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+
+// Separate component for subscription logic
+function RoomSubscription({ roomId, playerId, handleGameEvent }: {
+	roomId: string;
+	playerId: string;
+	handleGameEvent: (event: any) => void;
+}) {
+	console.log("🔌 RoomSubscription created:", { roomId, playerId });
+
+	api.game.subscribeToRoom.useSubscription(
+		{ roomId, playerId },
+		{
+			onData: (event) => {
+				console.log("📨 Received event:", event);
+				handleGameEvent(event);
+			},
+			onError: (error) => {
+				console.error("❌ Subscription error:", error);
+			},
+		},
+	);
+	return null;
+}
 
 export function MultiplayerLobby() {
 	const {
@@ -13,6 +36,7 @@ export function MultiplayerLobby() {
 		waitingForPlayer,
 		connectionStatus,
 		handleGameEvent,
+		setConnectionStatus,
 	} = useMultiplayerStore();
 
 	const [dateType, setDateType] = useState<DateType>("first");
@@ -22,22 +46,33 @@ export function MultiplayerLobby() {
 	const roomId = localStorage.getItem("spark-tell-room-id") || "";
 	const playerId = localStorage.getItem("spark-tell-player-id") || "";
 
-	// Subscribe to room events
-	api.game.subscribeToRoom.useSubscription(
-		{ roomId, playerId },
-		{
-			onData: (event) => {
-				handleGameEvent(event);
-			},
-			onError: (error) => {
-				console.error("Subscription error:", error);
-			},
-		},
-	);
+	// Only render subscription component if we have valid data
+	const shouldSubscribe = !!(roomId && playerId && (connectionStatus === "connected" || connectionStatus === "connecting"));
+
+	// Auto-connect if we have saved session data
+	React.useEffect(() => {
+		if (roomId && playerId && connectionStatus === "connecting") {
+			console.log("🔄 Attempting to reconnect with saved session");
+			setConnectionStatus("connected");
+		}
+	}, [roomId, playerId, connectionStatus, setConnectionStatus]);
+
+	// Debug logging
+	console.log("🔍 MultiplayerLobby Debug:", {
+		roomId,
+		playerId,
+		connectionStatus,
+		shouldSubscribe,
+		players,
+		roomCode
+	});
 
 	const startGameMutation = api.game.startGame.useMutation({
+		onSuccess: (data) => {
+			console.log("🎮 Game started successfully:", data);
+		},
 		onError: (error) => {
-			console.error("Failed to start game:", error);
+			console.error("❌ Failed to start game:", error);
 		},
 	});
 
@@ -90,6 +125,7 @@ export function MultiplayerLobby() {
 		leaveRoomMutation.mutate({ roomId, playerId });
 	};
 
+	// Show loading or error states
 	if (connectionStatus === "disconnected") {
 		return (
 			<div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-pink-500 via-purple-600 to-indigo-700 p-4">
@@ -97,6 +133,7 @@ export function MultiplayerLobby() {
 					<h2 className="mb-4 font-bold text-2xl">Connection Lost</h2>
 					<p className="mb-6">You've been disconnected from the game room.</p>
 					<button
+						type="button"
 						onClick={() => window.location.reload()}
 						className="rounded-full bg-white px-6 py-3 font-bold text-purple-600"
 					>
@@ -107,8 +144,29 @@ export function MultiplayerLobby() {
 		);
 	}
 
+	// Don't render if we don't have valid room/player IDs
+	if (!roomId || !playerId) {
+		return (
+			<div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-pink-500 via-purple-600 to-indigo-700 p-4">
+				<div className="text-center text-white">
+					<h2 className="mb-4 font-bold text-2xl">Loading...</h2>
+					<p className="mb-6">Setting up your game room...</p>
+				</div>
+			</div>
+		);
+	}
+
 	return (
 		<div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-pink-500 via-purple-600 to-indigo-700 p-4">
+			{/* Conditional subscription - only renders when we have valid data */}
+			{shouldSubscribe && (
+				<RoomSubscription 
+					roomId={roomId} 
+					playerId={playerId} 
+					handleGameEvent={handleGameEvent} 
+				/>
+			)}
+			
 			<motion.div
 				initial={{ opacity: 0, scale: 0.9 }}
 				animate={{ opacity: 1, scale: 1 }}

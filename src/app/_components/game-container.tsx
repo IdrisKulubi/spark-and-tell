@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { useGameStore } from "@/store/gameStore";
 import { useMultiplayerStore } from "@/store/multiplayerStore";
 import { GameEnd } from "./game-end";
@@ -17,13 +18,38 @@ export function GameContainer() {
 		(state) => state.connectionStatus,
 	);
 	const setGamePhase = useGameStore((state) => state.setGamePhase);
+	const { setConnectionStatus, setGamePhase: setMultiplayerPhase } = useMultiplayerStore();
+
+	// Auto-reconnection logic
+	React.useEffect(() => {
+		const savedPlayerId = localStorage.getItem("spark-tell-player-id");
+		const savedRoomId = localStorage.getItem("spark-tell-room-id");
+		
+		if (savedPlayerId && savedRoomId && connectionStatus === "disconnected") {
+			console.log("🔄 Auto-reconnecting to saved session:", {
+				playerId: savedPlayerId,
+				roomId: savedRoomId
+			});
+			
+			setConnectionStatus("connecting");
+			setMultiplayerPhase("setup");
+		}
+	}, [connectionStatus, setConnectionStatus, setMultiplayerPhase]);
+
+	// Debug logging
+	console.log("🎮 GameContainer state:", {
+		gamePhase,
+		multiplayerPhase,
+		connectionStatus,
+		isMultiplayer: connectionStatus === "connected" || connectionStatus === "connecting"
+	});
 
 	// Check if we're in multiplayer mode
 	const isMultiplayer =
 		connectionStatus === "connected" || connectionStatus === "connecting";
 
-	// Handle multiplayer phases
-	if (isMultiplayer) {
+	// Handle multiplayer phases - only if we have valid connection
+	if (isMultiplayer && connectionStatus === "connected") {
 		switch (multiplayerPhase) {
 			case "setup":
 				return <MultiplayerLobby />;

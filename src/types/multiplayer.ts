@@ -40,6 +40,7 @@ export interface MultiplayerGameState extends GameState {
 export type GameEvent =
 	| { type: "PLAYER_JOINED"; payload: { player: Player } }
 	| { type: "PLAYER_LEFT"; payload: { playerId: string } }
+	| { type: "ROOM_UPDATED"; payload: { host: Player; guest: Player | null; roomState: GameState } }
 	| { type: "GAME_STARTED"; payload: { settings: GameSettings } }
 	| { type: "DICE_ROLLED"; payload: { category: Category; playerId: string } }
 	| { type: "QUESTION_SELECTED"; payload: { question: Question } }

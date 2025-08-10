@@ -56,7 +56,7 @@ export function TRPCReactProvider(props: { children: React.ReactNode }) {
 						(op.direction === "down" && op.result instanceof Error),
 				}),
 				splitLink({
-					condition: (op) => op.type === "subscription",
+					condition: (op) => op.path?.startsWith("game.") ?? false,
 					true: wsLink({
 						client: createWSClient({
 							url: getWsUrl(),

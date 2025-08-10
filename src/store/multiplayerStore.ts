@@ -50,6 +50,7 @@ interface MultiplayerStore {
 
 	// Room management
 	setRoomInfo: (roomId: string, roomCode: string) => void;
+	setGamePhase: (phase: MultiplayerGameState["gamePhase"]) => void;
 
 	// Game state updates from events
 	updateGameStateFromEvent: (event: GameEvent) => void;
@@ -63,6 +64,7 @@ const initialState: Omit<
 	| "handleGameEvent"
 	| "resetMultiplayerState"
 	| "setRoomInfo"
+	| "setGamePhase"
 	| "updateGameStateFromEvent"
 > = {
 	roomId: "",
@@ -136,8 +138,13 @@ export const useMultiplayerStore = create<MultiplayerStore>((set, get) => ({
 		set({ roomId, roomCode });
 	},
 
+	setGamePhase: (phase) => {
+		set({ gamePhase: phase });
+	},
+
 	handleGameEvent: (event) => {
 		const state = get();
+		console.log("🎯 Handling game event:", event.type, event.payload);
 
 		switch (event.type) {
 			case "PLAYER_JOINED":
@@ -162,6 +169,21 @@ export const useMultiplayerStore = create<MultiplayerStore>((set, get) => ({
 						},
 					});
 				}
+				break;
+
+			case "ROOM_UPDATED":
+				set({
+					players: {
+						host: event.payload.host,
+						guest: event.payload.guest,
+					},
+					waitingForPlayer: !event.payload.guest,
+					settings: {
+						...state.settings,
+						player1Name: event.payload.host.name,
+						player2Name: event.payload.guest?.name || "",
+					},
+				});
 				break;
 
 			case "PLAYER_LEFT":
@@ -211,6 +233,7 @@ export const useMultiplayerStore = create<MultiplayerStore>((set, get) => ({
 			case "QUESTION_SELECTED":
 				set({
 					currentQuestion: event.payload.question,
+					questionsAnswered: [...state.questionsAnswered, event.payload.question.id],
 				});
 				break;
 

@@ -1,16 +1,17 @@
 import { EventEmitter } from "events";
 import { createTRPCRouter, publicProcedure } from "@/server/api/trpc";
 import type {
-	Category,
-	GameSettings,
-	PowerUpType,
-	SparkType,
+  Category,
+  GameSettings,
+  GameState,
+  PowerUpType,
+  SparkType,
 } from "@/types/game";
 import type {
-	GameEvent,
-	GameRoom,
-	MultiplayerGameState,
-	Player,
+  GameEvent,
+  GameRoom,
+  MultiplayerGameState,
+  Player,
 } from "@/types/multiplayer";
 import { observable } from "@trpc/server/observable";
 import { z } from "zod";
@@ -22,400 +23,548 @@ const roomEvents = new EventEmitter();
 
 // Generate a 6-digit room code
 function generateRoomCode(): string {
-	return Math.random().toString(36).substring(2, 8).toUpperCase();
+  return Math.random().toString(36).substring(2, 8).toUpperCase();
 }
 
 // Generate unique IDs
 function generateId(): string {
-	return Math.random().toString(36).substring(2, 15);
+  return Math.random().toString(36).substring(2, 15);
 }
 
 export const gameRouter = createTRPCRouter({
-	// Create a new game room
-	createRoom: publicProcedure
-		.input(
-			z.object({
-				hostName: z.string().min(1).max(50),
-			}),
-		)
-		.mutation(({ input }) => {
-			const roomId = generateId();
-			const roomCode = generateRoomCode();
-			const playerId = generateId();
+  // Create a new game room
+  createRoom: publicProcedure
+    .input(
+      z.object({
+        hostName: z.string().min(1).max(50),
+      })
+    )
+    .mutation(({ input }) => {
+      const roomId = generateId();
+      const roomCode = generateRoomCode();
+      const playerId = generateId();
 
-			const host: Player = {
-				id: playerId,
-				name: input.hostName,
-				isHost: true,
-				isConnected: true,
-				joinedAt: new Date(),
-			};
+      const host: Player = {
+        id: playerId,
+        name: input.hostName,
+        isHost: true,
+        isConnected: true,
+        joinedAt: new Date(),
+      };
 
-			const gameRoom: GameRoom = {
-				id: roomId,
-				code: roomCode,
-				hostId: playerId,
-				guestId: null,
-				gameState: {
-					settings: {
-						player1Name: input.hostName,
-						player2Name: "",
-						dateType: "first",
-						gameLength: "standard",
-						enableTimer: false,
-						timerSeconds: 60,
-						enableMusic: false,
-						showSparks: true,
-						selectedCategories: [1, 2, 3, 4, 5, 6],
-					},
-					currentTurn: 1,
-					player1Sparks: 0,
-					player2Sparks: 0,
-					questionsAnswered: [],
-					currentQuestion: null,
-					currentCategory: null,
-					lastCategory: null,
-					powerUpsUsed: {
-						1: { reverse: 0, "both-answer": 0, skip: 0, "re-roll": 0 },
-						2: { reverse: 0, "both-answer": 0, skip: 0, "re-roll": 0 },
-					},
-					bookmarkedQuestions: [],
-					gamePhase: "setup",
-					questionCount: 0,
-					totalQuestions: 20,
-					timerStartedAt: null,
-				},
-				createdAt: new Date(),
-				updatedAt: new Date(),
-				isActive: true,
-			};
+      const gameRoom: GameRoom = {
+        id: roomId,
+        code: roomCode,
+        hostId: playerId,
+        guestId: null,
+        isActive: true,
+        gameState: {
+          settings: {
+            player1Name: input.hostName,
+            player2Name: "",
+            dateType: "first",
+            gameLength: "standard",
+            enableTimer: false,
+            timerSeconds: 60,
+            enableMusic: false,
+            showSparks: true,
+            selectedCategories: [1, 2, 3, 4, 5, 6],
+          },
+          currentTurn: 1,
+          player1Sparks: 0,
+          player2Sparks: 0,
+          questionsAnswered: [],
+          currentQuestion: null,
+          currentCategory: null,
+          lastCategory: null,
+          powerUpsUsed: {
+            1: { reverse: 0, "both-answer": 0, skip: 0, "re-roll": 0 },
+            2: { reverse: 0, "both-answer": 0, skip: 0, "re-roll": 0 },
+          },
+          bookmarkedQuestions: [],
+          gamePhase: "setup",
+          questionCount: 0,
+          totalQuestions: 20,
+          timerStartedAt: null,
+        },
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      };
 
-			gameRooms.set(roomId, gameRoom);
-			playerSessions.set(playerId, roomId);
+      gameRooms.set(roomId, gameRoom);
+      playerSessions.set(playerId, roomId);
 
-			return {
-				roomId,
-				roomCode,
-				playerId,
-			};
-		}),
+      return {
+        roomId,
+        roomCode,
+        playerId,
+      };
+    }),
 
-	// Join an existing game room
-	joinRoom: publicProcedure
-		.input(
-			z.object({
-				roomCode: z.string().length(6),
-				guestName: z.string().min(1).max(50),
-			}),
-		)
-		.mutation(({ input }) => {
-			// Find room by code
-			const room = Array.from(gameRooms.values()).find(
-				(r) => r.code === input.roomCode.toUpperCase(),
-			);
+  // Join an existing room
+  joinRoom: publicProcedure
+    .input(
+      z.object({
+        roomCode: z.string().length(6),
+        guestName: z.string().min(1).max(50),
+      })
+    )
+    .mutation(({ input }) => {
+      // Find room by code
+      const room = Array.from(gameRooms.values()).find(
+        (r) => r.code === input.roomCode.toUpperCase()
+      );
 
-			if (!room) {
-				throw new Error("Room not found");
-			}
+      if (!room) {
+        throw new Error("Room not found");
+      }
 
-			if (room.guestId) {
-				throw new Error("Room is full");
-			}
+      if (room.guestId) {
+        throw new Error("Room is full");
+      }
 
-			if (!room.isActive) {
-				throw new Error("Room is no longer active");
-			}
+      const playerId = generateId();
 
-			const playerId = generateId();
+      // Update room with guest
+      room.guestId = playerId;
+      room.gameState.settings.player2Name = input.guestName;
+      room.updatedAt = new Date();
 
-			// Update room with guest
-			room.guestId = playerId;
-			room.gameState.settings.player2Name = input.guestName;
-			room.updatedAt = new Date();
+      playerSessions.set(playerId, room.id);
 
-			playerSessions.set(playerId, room.id);
+      // Create both player objects
+      const host: Player = {
+        id: room.hostId,
+        name: room.gameState.settings.player1Name,
+        isHost: true,
+        isConnected: true,
+        joinedAt: new Date(),
+      };
 
-			// Emit player joined event
-			const guest: Player = {
-				id: playerId,
-				name: input.guestName,
-				isHost: false,
-				isConnected: true,
-				joinedAt: new Date(),
-			};
+      const guest: Player = {
+        id: playerId,
+        name: input.guestName,
+        isHost: false,
+        isConnected: true,
+        joinedAt: new Date(),
+      };
 
-			roomEvents.emit(`room:${room.id}`, {
-				type: "PLAYER_JOINED",
-				payload: { player: guest },
-			});
+      // Emit room updated event
+      roomEvents.emit(`room:${room.id}`, {
+        type: "ROOM_UPDATED",
+        payload: { host, guest },
+      });
 
-			return {
-				roomId: room.id,
-				roomCode: room.code,
-				playerId,
-				gameState: room.gameState,
-			};
-		}),
+      return {
+        roomId: room.id,
+        roomCode: room.code,
+        playerId,
+        gameState: room.gameState,
+      };
+    }),
 
-	// Get room state
-	getRoomState: publicProcedure
-		.input(
-			z.object({
-				roomId: z.string(),
-				playerId: z.string(),
-			}),
-		)
-		.query(({ input }) => {
-			const room = gameRooms.get(input.roomId);
+  // Leave room
+  leaveRoom: publicProcedure
+    .input(
+      z.object({
+        roomId: z.string(),
+        playerId: z.string(),
+      })
+    )
+    .mutation(({ input }) => {
+      const room = gameRooms.get(input.roomId);
 
-			if (!room) {
-				throw new Error("Room not found");
-			}
+      if (!room) {
+        throw new Error("Room not found");
+      }
 
-			// Verify player is in this room
-			const playerRoom = playerSessions.get(input.playerId);
-			if (playerRoom !== input.roomId) {
-				throw new Error("Player not in this room");
-			}
+      // Remove player session
+      playerSessions.delete(input.playerId);
 
-			return room.gameState;
-		}),
+      // If host leaves, delete room
+      if (room.hostId === input.playerId) {
+        gameRooms.delete(input.roomId);
+        roomEvents.emit(`room:${room.id}`, {
+          type: "PLAYER_LEFT",
+          payload: { playerId: input.playerId },
+        });
+      } else {
+        // Guest leaves
+        room.guestId = null;
+        room.gameState.settings.player2Name = "";
+        room.gameState.gamePhase = "setup";
+        room.updatedAt = new Date();
 
-	// Start the game (host only)
-	startGame: publicProcedure
-		.input(
-			z.object({
-				roomId: z.string(),
-				playerId: z.string(),
-				settings: z.object({
-					dateType: z.enum(["first", "dating", "longterm", "custom"]),
-					gameLength: z.enum(["quick", "standard", "marathon"]),
-					enableTimer: z.boolean(),
-					timerSeconds: z.union([z.literal(30), z.literal(60), z.literal(90)]),
-					enableMusic: z.boolean(),
-					showSparks: z.boolean(),
-					selectedCategories: z.array(z.number().min(1).max(6)),
-				}),
-			}),
-		)
-		.mutation(({ input }) => {
-			const room = gameRooms.get(input.roomId);
+        roomEvents.emit(`room:${room.id}`, {
+          type: "PLAYER_LEFT",
+          payload: { playerId: input.playerId },
+        });
+      }
 
-			if (!room) {
-				throw new Error("Room not found");
-			}
+      return { success: true };
+    }),
 
-			if (room.hostId !== input.playerId) {
-				throw new Error("Only host can start the game");
-			}
+  // Get room state
+  getRoomState: publicProcedure
+    .input(
+      z.object({
+        roomId: z.string(),
+        playerId: z.string(),
+      })
+    )
+    .query(({ input }) => {
+      const room = gameRooms.get(input.roomId);
 
-			if (!room.guestId) {
-				throw new Error("Need another player to start");
-			}
+      if (!room) {
+        throw new Error("Room not found");
+      }
 
-			// Update game settings and start
-			room.gameState.settings = {
-				...room.gameState.settings,
-				dateType: input.settings.dateType,
-				gameLength: input.settings.gameLength,
-				enableTimer: input.settings.enableTimer,
-				timerSeconds: input.settings.timerSeconds,
-				enableMusic: input.settings.enableMusic,
-				showSparks: input.settings.showSparks,
-				selectedCategories: input.settings.selectedCategories,
-			};
-			room.gameState.gamePhase = "playing";
-			room.updatedAt = new Date();
+      // Verify player is in this room
+      const playerRoom = playerSessions.get(input.playerId);
+      if (playerRoom !== input.roomId) {
+        throw new Error("Player not in this room");
+      }
 
-			// Emit game started event
-			roomEvents.emit(`room:${room.id}`, {
-				type: "GAME_STARTED",
-				payload: { settings: room.gameState.settings },
-			});
+      return room.gameState;
+    }),
 
-			return { success: true };
-		}),
+  // Start the game (host only)
+  startGame: publicProcedure
+    .input(
+      z.object({
+        roomId: z.string(),
+        playerId: z.string(),
+        settings: z.object({
+          dateType: z.enum(["first", "dating", "longterm", "custom"]),
+          gameLength: z.enum(["quick", "standard", "marathon"]),
+          enableTimer: z.boolean(),
+          timerSeconds: z.union([z.literal(30), z.literal(60), z.literal(90)]),
+          enableMusic: z.boolean(),
+          showSparks: z.boolean(),
+          selectedCategories: z.array(z.number().min(1).max(6)),
+        }),
+      })
+    )
+    .mutation(({ input }) => {
+      const room = gameRooms.get(input.roomId);
 
-	// Roll dice
-	rollDice: publicProcedure
-		.input(
-			z.object({
-				roomId: z.string(),
-				playerId: z.string(),
-				category: z.number().min(1).max(6),
-			}),
-		)
-		.mutation(({ input }) => {
-			const room = gameRooms.get(input.roomId);
+      if (!room) {
+        throw new Error("Room not found");
+      }
 
-			if (!room) {
-				throw new Error("Room not found");
-			}
+      if (room.hostId !== input.playerId) {
+        throw new Error("Only host can start the game");
+      }
 
-			// Update room state
-			room.gameState.currentCategory = input.category as Category;
-			room.gameState.lastCategory = input.category as Category;
-			room.updatedAt = new Date();
+      if (!room.guestId) {
+        throw new Error("Need another player to start");
+      }
 
-			// Emit dice rolled event
-			roomEvents.emit(`room:${room.id}`, {
-				type: "DICE_ROLLED",
-				payload: {
-					category: input.category as Category,
-					playerId: input.playerId,
-				},
-			});
+      // Update game settings and start
+      room.gameState.settings = {
+        ...room.gameState.settings,
+        dateType: input.settings.dateType,
+        gameLength: input.settings.gameLength,
+        enableTimer: input.settings.enableTimer,
+        timerSeconds: input.settings.timerSeconds,
+        enableMusic: input.settings.enableMusic,
+        showSparks: input.settings.showSparks,
+        selectedCategories: input.settings.selectedCategories,
+      };
+      room.gameState.gamePhase = "playing";
+      room.updatedAt = new Date();
 
-			return { success: true };
-		}),
+      // Emit game started event
+      roomEvents.emit(`room:${room.id}`, {
+        type: "GAME_STARTED",
+        payload: { settings: room.gameState.settings },
+      });
 
-	// Award sparks
-	awardSparks: publicProcedure
-		.input(
-			z.object({
-				roomId: z.string(),
-				playerId: z.string(),
-				sparkTypes: z.array(z.string()),
-				awardedTo: z.string(),
-			}),
-		)
-		.mutation(({ input }) => {
-			const room = gameRooms.get(input.roomId);
+      return { success: true };
+    }),
 
-			if (!room) {
-				throw new Error("Room not found");
-			}
+  // Select question after dice roll
+  selectQuestion: publicProcedure
+    .input(
+      z.object({
+        roomId: z.string(),
+        playerId: z.string(),
+        questionId: z.string(),
+      })
+    )
+    .mutation(({ input }) => {
+      console.log("🔍 selectQuestion called with:", input);
 
-			// Calculate spark points (simplified - you'd import the actual logic)
-			const sparkPoints = input.sparkTypes.length * 2; // Simplified calculation
+      const room = gameRooms.get(input.roomId);
 
-			// Update scores
-			if (input.awardedTo === room.hostId) {
-				room.gameState.player1Sparks += sparkPoints;
-			} else {
-				room.gameState.player2Sparks += sparkPoints;
-			}
+      if (!room) {
+        console.log("❌ Room not found:", input.roomId);
+        throw new Error("Room not found");
+      }
 
-			room.updatedAt = new Date();
+      // Find the question by ID - import statically
+      try {
+        const questionsData = require("@/data/questions.json");
+        console.log("📚 Questions data loaded, count:", questionsData.length);
+        const question = questionsData.find(
+          (q: any) => q.id === input.questionId
+        );
+        console.log(
+          "🎯 Found question:",
+          question ? question.text : "NOT FOUND"
+        );
 
-			// Emit sparks awarded event
-			roomEvents.emit(`room:${room.id}`, {
-				type: "SPARKS_AWARDED",
-				payload: {
-					sparkTypes: input.sparkTypes as SparkType[],
-					awardedBy: input.playerId,
-					awardedTo: input.awardedTo,
-				},
-			});
+        if (!question) {
+          console.log("❌ Question not found with ID:", input.questionId);
+          throw new Error("Question not found");
+        }
 
-			return { success: true };
-		}),
+        // Update room state
+        room.gameState.currentQuestion = question;
+        room.gameState.questionsAnswered.push(input.questionId);
+        room.updatedAt = new Date();
 
-	// Next turn
-	nextTurn: publicProcedure
-		.input(
-			z.object({
-				roomId: z.string(),
-				playerId: z.string(),
-			}),
-		)
-		.mutation(({ input }) => {
-			const room = gameRooms.get(input.roomId);
+        console.log("✅ Question selected successfully, emitting event");
 
-			if (!room) {
-				throw new Error("Room not found");
-			}
+        // Emit question selected event
+        roomEvents.emit(`room:${room.id}`, {
+          type: "QUESTION_SELECTED",
+          payload: { question },
+        });
 
-			// Switch turns
-			room.gameState.currentTurn = room.gameState.currentTurn === 1 ? 2 : 1;
-			room.gameState.questionCount += 1;
-			room.gameState.currentQuestion = null;
-			room.gameState.currentCategory = null;
+        return { success: true };
+      } catch (error) {
+        console.log("❌ Error in selectQuestion:", error);
+        throw error;
+      }
+    }),
 
-			// Check if game should end
-			if (room.gameState.questionCount >= room.gameState.totalQuestions) {
-				room.gameState.gamePhase = "ended";
-			} else {
-				room.gameState.gamePhase = "playing";
-			}
+  // Complete answer (move to awarding phase)
+  completeAnswer: publicProcedure
+    .input(
+      z.object({
+        roomId: z.string(),
+        playerId: z.string(),
+      })
+    )
+    .mutation(({ input }) => {
+      const room = gameRooms.get(input.roomId);
 
-			room.updatedAt = new Date();
+      if (!room) {
+        throw new Error("Room not found");
+      }
 
-			// Emit turn changed event
-			roomEvents.emit(`room:${room.id}`, {
-				type: "TURN_CHANGED",
-				payload: { currentTurn: room.gameState.currentTurn },
-			});
+      // Update room state to awarding phase
+      room.gameState.gamePhase = "awarding-sparks";
+      room.updatedAt = new Date();
 
-			return { success: true };
-		}),
+      // Emit answer completed event
+      roomEvents.emit(`room:${room.id}`, {
+        type: "ANSWER_COMPLETED",
+        payload: { playerId: input.playerId },
+      });
 
-	// Subscribe to room events (WebSocket-like functionality)
-	subscribeToRoom: publicProcedure
-		.input(
-			z.object({
-				roomId: z.string(),
-				playerId: z.string(),
-			}),
-		)
-		.subscription(({ input }) => {
-			return observable<GameEvent>((emit) => {
-				// Verify player is in room
-				const playerRoom = playerSessions.get(input.playerId);
-				if (playerRoom !== input.roomId) {
-					emit.error(new Error("Player not in this room"));
-					return;
-				}
+      return { success: true };
+    }),
 
-				const onRoomEvent = (event: GameEvent) => {
-					emit.next(event);
-				};
+  // Roll dice
+  rollDice: publicProcedure
+    .input(
+      z.object({
+        roomId: z.string(),
+        playerId: z.string(),
+        category: z.number().min(1).max(6),
+      })
+    )
+    .mutation(({ input }) => {
+      const room = gameRooms.get(input.roomId);
 
-				// Listen for events on this room
-				roomEvents.on(`room:${input.roomId}`, onRoomEvent);
+      if (!room) {
+        throw new Error("Room not found");
+      }
 
-				// Cleanup
-				return () => {
-					roomEvents.off(`room:${input.roomId}`, onRoomEvent);
-				};
-			});
-		}),
+      // Update room state
+      room.gameState.currentCategory = input.category as Category;
+      room.gameState.lastCategory = input.category as Category;
+      room.updatedAt = new Date();
 
-	// Leave room
-	leaveRoom: publicProcedure
-		.input(
-			z.object({
-				roomId: z.string(),
-				playerId: z.string(),
-			}),
-		)
-		.mutation(({ input }) => {
-			const room = gameRooms.get(input.roomId);
+      // Emit dice rolled event
+      roomEvents.emit(`room:${room.id}`, {
+        type: "DICE_ROLLED",
+        payload: {
+          category: input.category as Category,
+          playerId: input.playerId,
+        },
+      });
 
-			if (!room) {
-				return { success: true }; // Room already gone
-			}
+      return { success: true };
+    }),
 
-			// Remove player from room
-			if (room.hostId === input.playerId) {
-				// Host left - end the room
-				room.isActive = false;
-				gameRooms.delete(input.roomId);
-			} else if (room.guestId === input.playerId) {
-				// Guest left
-				room.guestId = null;
-				room.gameState.settings.player2Name = "";
-				room.gameState.gamePhase = "setup";
-			}
+  // Award sparks
+  awardSparks: publicProcedure
+    .input(
+      z.object({
+        roomId: z.string(),
+        playerId: z.string(),
+        sparkTypes: z.array(z.string()),
+        awardedTo: z.string(),
+      })
+    )
+    .mutation(({ input }) => {
+      const room = gameRooms.get(input.roomId);
 
-			playerSessions.delete(input.playerId);
+      if (!room) {
+        throw new Error("Room not found");
+      }
 
-			// Emit player left event
-			roomEvents.emit(`room:${input.roomId}`, {
-				type: "PLAYER_LEFT",
-				payload: { playerId: input.playerId },
-			});
+      // Calculate spark points (simplified - you'd import the actual logic)
+      const sparkPoints = input.sparkTypes.length * 2; // Simplified calculation
 
-			return { success: true };
-		}),
+      // Update scores
+      if (input.awardedTo === room.hostId) {
+        room.gameState.player1Sparks += sparkPoints;
+      } else {
+        room.gameState.player2Sparks += sparkPoints;
+      }
+
+      room.updatedAt = new Date();
+
+      // Emit sparks awarded event
+      roomEvents.emit(`room:${room.id}`, {
+        type: "SPARKS_AWARDED",
+        payload: {
+          sparkTypes: input.sparkTypes as SparkType[],
+          awardedBy: input.playerId,
+          awardedTo: input.awardedTo,
+        },
+      });
+
+      return { success: true };
+    }),
+
+  // Next turn
+  nextTurn: publicProcedure
+    .input(
+      z.object({
+        roomId: z.string(),
+        playerId: z.string(),
+      })
+    )
+    .mutation(({ input }) => {
+      const room = gameRooms.get(input.roomId);
+
+      if (!room) {
+        throw new Error("Room not found");
+      }
+
+      // Switch turns
+      room.gameState.currentTurn = room.gameState.currentTurn === 1 ? 2 : 1;
+      room.gameState.questionCount += 1;
+      room.gameState.currentQuestion = null;
+      room.gameState.currentCategory = null;
+
+      // Check if game should end
+      if (room.gameState.questionCount >= room.gameState.totalQuestions) {
+        room.gameState.gamePhase = "ended";
+      } else {
+        room.gameState.gamePhase = "playing";
+      }
+
+      room.updatedAt = new Date();
+
+      // Emit turn changed event
+      roomEvents.emit(`room:${room.id}`, {
+        type: "TURN_CHANGED",
+        payload: { currentTurn: room.gameState.currentTurn },
+      });
+
+      return { success: true };
+    }),
+
+  // Subscribe to room events (WebSocket-like functionality)
+  subscribeToRoom: publicProcedure
+    .input(
+      z.object({
+        roomId: z.string().min(1),
+        playerId: z.string().min(1),
+      })
+    )
+    .subscription(({ input }) => {
+      return observable<GameEvent>((emit) => {
+        // Verify inputs are valid
+        if (!input.roomId || !input.playerId) {
+          emit.error(new Error("Invalid room or player ID"));
+          return;
+        }
+
+        // Verify player is in room
+        const playerRoom = playerSessions.get(input.playerId);
+        if (playerRoom !== input.roomId) {
+          emit.error(new Error("Player not in this room"));
+          return;
+        }
+
+        const onRoomEvent = (event: GameEvent) => {
+          emit.next(event);
+        };
+
+        // Subscribe to room events
+        roomEvents.on(`room:${input.roomId}`, onRoomEvent);
+
+        // Send current room state when player first subscribes
+        const room = gameRooms.get(input.roomId);
+        if (room) {
+          // Send room updated event with current players
+          const host = {
+            id: room.hostId,
+            name: room.gameState.settings.player1Name,
+            isHost: true,
+            isConnected: true,
+            joinedAt: new Date(),
+          };
+
+          const guest = room.guestId
+            ? {
+                id: room.guestId,
+                name: room.gameState.settings.player2Name,
+                isHost: false,
+                isConnected: true,
+                joinedAt: new Date(),
+              }
+            : null;
+
+          emit.next({
+            type: "ROOM_UPDATED",
+            payload: { host, guest },
+          } as GameEvent);
+
+          // If game is in progress, send current game state
+          if (room.gameState.gamePhase !== "setup") {
+            emit.next({
+              type: "GAME_STARTED",
+              payload: { settings: room.gameState.settings },
+            });
+
+            // Send current question if any
+            if (room.gameState.currentQuestion) {
+              emit.next({
+                type: "QUESTION_SELECTED",
+                payload: { question: room.gameState.currentQuestion },
+              });
+            }
+
+            // Send current turn info
+            emit.next({
+              type: "TURN_CHANGED",
+              payload: { currentTurn: room.gameState.currentTurn },
+            });
+          }
+        }
+
+        // Cleanup function
+        return () => {
+          roomEvents.off(`room:${input.roomId}`, onRoomEvent);
+        };
+      });
+    }),
 });
