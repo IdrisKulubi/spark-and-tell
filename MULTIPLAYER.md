@@ -208,4 +208,3 @@ api.game.subscribeToRoom.useSubscription(
 
 ---
 
-**Ready to connect hearts across distances! 💕🌐**
